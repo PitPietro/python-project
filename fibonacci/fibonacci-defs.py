@@ -5,6 +5,11 @@ import time
 
 
 def get_fibonacci_iterative(n: int) -> int:
+    """
+    Calculate the fibonacci number at position 'n' in an iterative way
+    :param n: position number
+    :return: position n of Fibonacci series
+    """
     a = 0
     b = 1
 
@@ -15,6 +20,13 @@ def get_fibonacci_iterative(n: int) -> int:
 
 
 def get_fibonacci_iterative_print(n: int):
+    """
+    Calculate the fibonacci number at position 'n' in an iterative way
+    printing the steps
+    :param n: position number
+    :return: position n of Fibonacci series
+    """
+
     a1 = 0
     a2 = 1
 
@@ -30,6 +42,8 @@ def get_fibonacci_iterative_print(n: int):
 def get_fibonacci_recursive(n: int) -> int:
     """
     Calculate the fibonacci number at position n recursively
+    :param n: position number
+    :return: position n of Fibonacci series
     """
 
     a = 0
@@ -48,6 +62,8 @@ def get_fibonacci_recursive(n: int) -> int:
 def compare_fibonacci_calculators(n: int) -> None:
     """
     Interactively compare both fibonacci generators
+    :param n: position number
+    :return: string of the calculated time
     """
 
     start_i = time.clock()
