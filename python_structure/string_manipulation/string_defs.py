@@ -103,3 +103,5 @@ if __name__ == '__main__':
     join_list(l_words, " ")
     strip_string("  Pit  ")
 
+    to_capital("white")
+
