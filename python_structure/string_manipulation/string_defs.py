@@ -89,14 +89,42 @@ def strip_string(phrase: str):
     print(phrase.strip())
 
 
+def to_slice_string(phrase: str, start: int, end: int):
+    """
+    Slicing returns a new iterable from a subset of the items in the 'phrase' string
+    :param phrase:
+    :param start: it is included in the sliced elements and, if it's equal to zero, can be omitted
+    :param end: it isn't included in the sliced elements and, if it's equal to le length of 'phrase', can be omitted
+    :return:
+    """
+    result = phrase[start:end]
+    print(result)
+
+
+def to_slice_list(my_list: list, start: int, end: int):
+    result = my_list[start:end]
+    print(result)
+
+
+def replace_in_string(phrase: str, l_to_replace: str, replacement: str):
+    return phrase.replace(l_to_replace, replacement)
+
+
+def find_index(phrase: str, letter: str) -> int:
+    return phrase.index(letter)
+
+
 if __name__ == '__main__':
     negative_index()
+    my_string = "I am meeting some friends. They're very interesting"
+    letter_y = "y"
+
     print("\n" + string_concatenation("Hi ", "how ", "are you?"))
     multiply_operator("Hello", 4)
     to_case_fold("Why? ß ")
     to_swap_case("I am nOt sTuPid")
     to_format("18", "Florence")
-    split_string("I am meeting some friends. They're very interesting", ". ")
+    split_string(my_string, ". ")
     join_string("Pit", "-")
 
     l_words = ["Peter", "is", "reading", "a", "book"]
@@ -104,4 +132,9 @@ if __name__ == '__main__':
     strip_string("  Pit  ")
 
     to_capital("white")
+    to_slice_string("I'm good", 1, 5)
+    to_slice_list(l_words, 2, 4)
+    print(replace_in_string(my_string, "e", "€"))
+
+    print("The letter {} is at index {}".format(letter_y, find_index(my_string, letter_y)))
 
