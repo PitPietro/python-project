@@ -10,9 +10,9 @@ def negative_index():
     print(my_name)
     for n in number_list:
         try:
-            print(my_name[n])
+            return my_name[n]
         except IndexError:
-            print("index {} invalid".format(n))
+            return "index {} invalid".format(n)
 
 
 def string_concatenation(a: str, b: str, c: str) -> str:
@@ -48,7 +48,7 @@ def to_case_fold(word: str):
     :param word: the string to be casefolded
     :return: the casefolded
     """
-    print(word.casefold())
+    return word.casefold()
 
 
 def to_swap_case(word: str):
@@ -59,15 +59,19 @@ def to_swap_case(word: str):
     :param word: the string to be swapcased
     :return: the swapcased string
     """
-    print(word.swapcase())
+    return word.swapcase()
 
 
-def to_format(name: str, city: str):
+def to_format_params(name: str, city: str):
     return "I'm {} years old and I'm from {}".format(name, city)
 
 
+def to_format(phrase: str, param: str):
+    return phrase.format(param)
+
+
 def split_string(phrase: str, split_param: str):
-    print(phrase.split(split_param))
+    return phrase.split(split_param)
 
 
 def join_string(phrase: str, join_s: str):
@@ -116,20 +120,20 @@ if __name__ == '__main__':
     letter_y = "y"
 
     print("\n" + string_concatenation("Hi ", "how ", "are you?"))
-    multiply_operator("Hello", 4)
-    to_case_fold("Why? ß ")
-    to_swap_case("I am nOt sTuPid")
-    to_format("18", "Florence")
-    split_string(my_string, ". ")
-    join_string("Pit", "-")
+    print(multiply_operator("Hello", 4))
+    print(to_case_fold("Why? ß "))
+    print(to_swap_case("I am nOt sTuPid"))
+    print(to_format_params("18", "Florence"))
+    print(split_string(my_string, ". "))
+    print(join_string("Pit", "-"))
 
     l_words = ["Peter", "is", "reading", "a", "book"]
-    join_list(l_words, " ")
-    strip_string("  Pit  ")
+    print(join_list(l_words, " "))
+    print(strip_string("  Pit  "))
 
-    to_capital("white")
-    to_slice_string("I'm good", 1, 5)
-    to_slice_list(l_words, 2, 4)
+    print(to_capital("white"))
+    print(to_slice_string("I'm good", 1, 5))
+    print(to_slice_list(l_words, 2, 4))
     print(replace_in_string(my_string, "e", "€"))
 
     print("The letter {} is at index {}".format(letter_y, find_index(my_string, letter_y)))
