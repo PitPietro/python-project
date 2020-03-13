@@ -20,19 +20,19 @@ def string_concatenation(a: str, b: str, c: str) -> str:
 
 
 def multiply_operator(word: str, factor: int = 1):
-    print(word * factor)
+    return word * factor
 
 
 def to_upper(word: str):
-    print(word.upper())
+    return word.upper()
 
 
 def to_lower(word: str):
-    print(word.lower())
+    return word.lower()
 
 
 def to_capital(word: str):
-    print(word.capitalize())
+    return word.capitalize()
 
 
 def to_case_fold(word: str):
@@ -63,7 +63,7 @@ def to_swap_case(word: str):
 
 
 def to_format(name: str, city: str):
-    print("I'm {} years old and I'm from {}".format(name, city))
+    return "I'm {} years old and I'm from {}".format(name, city)
 
 
 def split_string(phrase: str, split_param: str):
@@ -71,13 +71,11 @@ def split_string(phrase: str, split_param: str):
 
 
 def join_string(phrase: str, join_s: str):
-    result = join_s.join(phrase)
-    print(result)
+    return join_s.join(phrase)
 
 
 def join_list(words: list, join_s):
-    result = join_s.join(words)
-    print(result)
+    return join_s.join(words)
 
 
 def strip_string(phrase: str):
@@ -86,7 +84,7 @@ def strip_string(phrase: str):
     :param phrase:
     :return:
     """
-    print(phrase.strip())
+    return phrase.strip()
 
 
 def to_slice_string(phrase: str, start: int, end: int):
@@ -97,13 +95,11 @@ def to_slice_string(phrase: str, start: int, end: int):
     :param end: it isn't included in the sliced elements and, if it's equal to le length of 'phrase', can be omitted
     :return:
     """
-    result = phrase[start:end]
-    print(result)
+    return phrase[start:end]
 
 
 def to_slice_list(my_list: list, start: int, end: int):
-    result = my_list[start:end]
-    print(result)
+    return my_list[start:end]
 
 
 def replace_in_string(phrase: str, l_to_replace: str, replacement: str):
