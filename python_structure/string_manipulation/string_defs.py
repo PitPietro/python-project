@@ -16,22 +16,50 @@ def negative_index():
 
 
 def string_concatenation(a: str, b: str, c: str) -> str:
+    """
+    Concatenate the strings given as parameter and return the concatenation
+    :param a: parameter
+    :param b: parameter
+    :param c: parameter
+    :return: string concatenation
+    """
     return a + b + c
 
 
 def multiply_operator(word: str, factor: int = 1):
+    """
+    Multiply the string 'word' for the 'factor' value
+    :param word: string to be multiplied
+    :param factor: it's default value is 1
+    :return: multiplied string
+    """
     return word * factor
 
 
 def to_upper(word: str):
+    """
+    Make the 'word' parameter uppercase
+    :param word: string to be uppercase
+    :return: uppercase string
+    """
     return word.upper()
 
 
 def to_lower(word: str):
+    """
+    Make the 'word' parameter lowercase
+    :param word: string to be lowercase
+    :return: lowercase string
+    """
     return word.lower()
 
 
 def to_capital(word: str):
+    """
+    Make the 'word' parameter capitalized
+    :param word: string to be capitalized
+    :return: capitalized string
+    """
     return word.capitalize()
 
 
@@ -46,31 +74,49 @@ def to_case_fold(word: str):
     However, since ß is already lowercase, lower() method
     does nothing to it. But, casefold() converts it to ss.
     :param word: the string to be casefolded
-    :return: the casefolded
+    :return: case-folded string
     """
     return word.casefold()
 
 
 def to_swap_case(word: str):
     """
-    The string swapcase() method converts all uppercase
+    The 'swapcase()' method converts all uppercase
     characters to lowercase and all lowercase characters
-    to uppercase characters of the given string, and returns it.
+    to uppercase characters of the 'word' string.
     :param word: the string to be swapcased
-    :return: the swapcased string
+    :return: the swap-cased string
     """
     return word.swapcase()
 
 
 def to_format_params(name: str, city: str):
+    """
+    Take the 'name' and 'city' and put them in a formatted string
+    :param name: parameter
+    :param city: parameter
+    :return: formatted string
+    """
     return "I'm {} years old and I'm from {}".format(name, city)
 
 
 def to_format(phrase: str, param: str):
+    """
+    The 'phrase' string is formatted taking 'param' parameter
+    :param phrase: it must contain a {} that will be replaced by the 'param' parameter
+    :param param: parameter
+    :return: formatted string
+    """
     return phrase.format(param)
 
 
 def split_string(phrase: str, split_param: str):
+    """
+    Split the 'phrase' string in different strings
+    :param phrase:
+    :param split_param:
+    :return: a list of strings
+    """
     return phrase.split(split_param)
 
 
@@ -137,4 +183,3 @@ if __name__ == '__main__':
     print(replace_in_string(my_string, "e", "€"))
 
     print("The letter {} is at index {}".format(letter_y, find_index(my_string, letter_y)))
-
