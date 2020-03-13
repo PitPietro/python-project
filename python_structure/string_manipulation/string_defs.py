@@ -112,19 +112,31 @@ def to_format(phrase: str, param: str):
 
 def split_string(phrase: str, split_param: str):
     """
-    Split the 'phrase' string in different strings
-    :param phrase:
-    :param split_param:
+    Split the 'phrase' string in different strings taking 'split_param' as split's parameter
+    :param phrase: string to be splitted
+    :param split_param: split's parameter
     :return: a list of strings
     """
     return phrase.split(split_param)
 
 
 def join_string(phrase: str, join_s: str):
+    """
+    Take the 'phrase' and intersperse it whit 'join_s' string
+    :param phrase: string to be interspersed
+    :param join_s: string
+    :return: interspersed string
+    """
     return join_s.join(phrase)
 
 
-def join_list(words: list, join_s):
+def join_list(words: list, join_s: str):
+    """
+    Take each strings in the list 'words' is joined in a single string spaced whit 'join_s'
+    :param words: string to be joined
+    :param join_s: spaced string
+    :return: joined string
+    """
     return join_s.join(words)
 
 
@@ -140,24 +152,48 @@ def strip_string(phrase: str):
 def to_slice_string(phrase: str, start: int, end: int):
     """
     Slicing returns a new iterable from a subset of the items in the 'phrase' string
-    :param phrase:
+    :param phrase: string to be sliced
     :param start: it is included in the sliced elements and, if it's equal to zero, can be omitted
     :param end: it isn't included in the sliced elements and, if it's equal to le length of 'phrase', can be omitted
-    :return:
+    :return: sliced string
     """
     return phrase[start:end]
 
 
 def to_slice_list(my_list: list, start: int, end: int):
+    """
+    Slicing returns a new iterable from a subset of the items in the 'phrase' string
+    :param my_list: list to be sliced
+    :param start: it is included in the sliced elements and, if it's equal to zero, can be omitted
+    :param end: it isn't included in the sliced elements and, if it's equal to le length of 'phrase', can be omitted
+    :return: sliced list
+    """
     return my_list[start:end]
 
 
 def replace_in_string(phrase: str, l_to_replace: str, replacement: str):
+    """
+    Take the 'phrase' string and replace all the 'l_to_replace' occurrence whit 'replacement' string
+    :param phrase: string that will be modified
+    :param l_to_replace: string to be replaced
+    :param replacement: string that will replace 'l_to_replace'
+    :return: 'phrase' string modified
+    """
     return phrase.replace(l_to_replace, replacement)
 
 
 def find_index(phrase: str, letter: str) -> int:
-    return phrase.index(letter)
+    """
+    Find the 'phrase' index at the first occurrence of 'letter' string
+    :param phrase: string where the index will be found on
+    :param letter: index occurrence
+    :return: integer corresponding to 'letter' position
+    """
+
+    try:
+        return phrase.index(letter)
+    except ValueError:
+        return -1
 
 
 if __name__ == '__main__':
@@ -182,4 +218,4 @@ if __name__ == '__main__':
     print(to_slice_list(l_words, 2, 4))
     print(replace_in_string(my_string, "e", "€"))
 
-    print("The letter {} is at index {}".format(letter_y, find_index(my_string, letter_y)))
+    print("The letter {} is at index {}".format(letter_y, find_index(my_string, "z")))
