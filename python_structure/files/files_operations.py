@@ -25,6 +25,13 @@ def file_read():
     print(content)
 
 
+def error_callback(update, context):
+   LOGGER.exception('This is custom errors: "%s"', update, context.error)
+   raise context.error
+
+dispatcher.add_error_handler(error_callback)
+
+
 if __name__ == '__main__':
     file_open()
     file_read()
