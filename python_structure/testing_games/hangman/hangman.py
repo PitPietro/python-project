@@ -1,3 +1,20 @@
+import random
+
+
+words = ("artist",
+         "backstage",
+         "console",
+         "dungeon",
+         "eight",
+         "flat",
+         "green",
+         "hello",
+         "iterator",
+         "jack",
+         "wrong",
+         "player")
+
+
 def hangman(word):
     """
     Player1: The PC
@@ -10,9 +27,10 @@ def hangman(word):
     - 'board' is a list of string used to keep track of the game board displayed to Player2.
     It is populated with underscores for each character in the 'word' parameter.
     - 'win' keeps track of whether Player2 has won or not the game
-    :param word:
+    :param word: becomes uppercase to avoid case sensitive problems
     :return:
     """
+    word = word.upper()
     wrong = 0
     stages = ["",
               "___________     H",
@@ -41,7 +59,7 @@ def hangman(word):
     while wrong < len(stages) - 1:
         print("\n")
         msg = "Guess a letter: "
-        char = input(msg)
+        char = input(msg).upper()
         if char in remaining_letters:
             char_index = remaining_letters.index(char)
             board[char_index] = char
@@ -62,9 +80,14 @@ def hangman(word):
             break
     # if Player2 has lost, print the full hangman
     if not win:
-        print("\n".join(stages[0:wrong]))
-        print("You lose! The word was {}.".format(word))
+        print("\n".join(stages))
+        print("|________________\nYou lose! The word was {}.".format(word))
+
+
+def words_randomizer():
+    index = random.randint(0, len(words))
+    return words[index]
 
 
 if __name__ == '__main__':
-    hangman("Pit")
+    hangman(words_randomizer())
