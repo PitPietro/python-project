@@ -1,4 +1,13 @@
 class Dog:
+    """
+    Classes has two kind of variables:
+    1- class variables
+    Belong to the object and the object's class.
+    They're useful because they can be used to share data between
+    all the instances of a
+    2- Instance variables
+    Belong to objects.
+    """
     def __init__(self, name, breed, owner):
         self.name = name
         self.breed = breed
