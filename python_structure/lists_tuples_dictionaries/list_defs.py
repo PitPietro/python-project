@@ -24,6 +24,7 @@ rating_movies = ["I love Episode I",
 
 num_rating_movies = [2, 3, 5, 10, 4, 1, 8, 9, 3, 2, 5]
 
+
 def list_declaration_1(a="Mozart", b=1.2):
     """
     Lists are mutable
@@ -73,6 +74,11 @@ def combine_two_lists(list_1, list_2):
         my_list.append(i)
     return my_list
 
+
+"""
+List Comprehension
+Create lists based on criteria applied to existing lists
+"""
 
 if __name__ == '__main__':
     main_artist = list_declaration_1("Aladino")
