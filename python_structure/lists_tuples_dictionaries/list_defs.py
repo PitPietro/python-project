@@ -119,6 +119,52 @@ def multiply_list(multiplier, input_list):
     return [i * multiplier for i in input_list]
 
 
+def list_intersection(list1, list2):
+    """
+    Check if each value in list1 is also in list2
+    :param list1:
+    :param list2:
+    :return: a list containing the elements common to both the lists
+    """
+    return [value for value in list1 if value in list2]
+
+
+def set_intersection(list1, list2):
+    """
+    Using the built-in 'intersection()' method form a 'set()' element.
+    'intersection()' can have as parameters more than two sets.
+    :param list1:
+    :param list2:
+    :return:
+    """
+    set1 = set(list1)
+    set2 = set(list2)
+    return list(set1.intersection(set2))
+
+
+def find_the_single_element(my_list):
+    """
+    Given a non-empty list of integers, every element appears twice except for one. Find that single one.
+    :param my_list:
+    :return:
+    """
+    duplicates = []
+    my_set = set()
+    for i in my_list:
+        length_one = len(my_set)
+        my_set.add(i)
+        length_two = len(my_set)
+        if length_one == length_two:
+            duplicates.append(i)
+
+    return [i for i in my_list + duplicates if i not in my_list or i not in duplicates]
+    # list_dif = []
+    # for i in my_list + duplicates:
+    #     if i not in my_list or i not in duplicates:
+    #         list_dif.append(i)
+    # return list_dif
+
+
 if __name__ == '__main__':
     main_artist = list_declaration_1("Aladino")
     # list_append(main_artist)
@@ -132,3 +178,9 @@ if __name__ == '__main__':
     print(string_to_list_only_last_digit(my_s))
     my_n = [1, 7, 5, 3, 2]
     print(multiply_list(7, my_n))
+    my_n2 = [1, 4, 3, 8]
+    print(list_intersection(my_n, my_n2))
+    print(set_intersection(my_n, my_n2))
+    # find_the_single_element
+    duplicates_list = [1, 2, 3, 2, 3, 1, 4]
+    print(find_the_single_element(duplicates_list))
