@@ -77,13 +77,58 @@ def combine_two_lists(list_1, list_2):
 
 """
 List Comprehension
-Create lists based on criteria applied to existing lists
+Allows to create lists based on criteria applied to existing lists.
+1) Iterates
+2) Processes
+3) Filter
 """
+
+
+def string_to_list(word):
+    """
+    Take each character of the 'word' parameter and return a list
+    populated with all the characters
+    :param word: string
+    :return: list of string's characters
+    """
+    return [c for c in word]
+
+
+def string_to_list_only_digit(word):
+    """
+    Take each character of the 'word' parameter and return a list
+    populated with all the characters. The if clause allows only
+    the digits to be added to the list.
+    :param word: string
+    :return: list of digit inside 'word'
+    """
+    return [c for c in word if c.isdigit()]
+
+
+def string_to_list_only_last_digit(word):
+    """
+    The negative index allows to select only the last digit
+    from the new list
+    :param word: parameter
+    :return: list
+    """
+    return [c for c in word if c.isdigit()][-1]
+
+
+def multiply_list(multiplier, input_list):
+    return [i * multiplier for i in input_list]
+
 
 if __name__ == '__main__':
     main_artist = list_declaration_1("Aladino")
-    list_append(main_artist)
+    # list_append(main_artist)
     s_list = list_sum(main_artist)
     list_change_element(s_list, 4)
     print("\n")
     print(combine_two_lists(star_wars_movies, rating_movies))
+    my_s = "You 2 are good to be 43."
+    print(string_to_list(my_s))
+    print(string_to_list_only_digit(my_s))
+    print(string_to_list_only_last_digit(my_s))
+    my_n = [1, 7, 5, 3, 2]
+    print(multiply_list(7, my_n))
