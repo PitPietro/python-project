@@ -1,3 +1,5 @@
+from python_structure.data_structures.stacks_queues.stack import Stack
+
 star_wars_movies = ["Episode I - The Phantom Menace",
                     "Episode II – Attack of the Clones",
                     "Episode III – Revenge of the Sith",
@@ -178,6 +180,25 @@ def find_the_single_element_with_dict(my_list):
             return key
 
 
+def reverse_list(my_list):
+    """
+    Reverse the given list by adding each element to a stack with a for-loop.
+    Then use the 'pop' function of the stack for each element of the stack
+    to get the items from the last to the first and append to a new list.
+    :param my_list: a list
+    :return: reversed list
+    """
+    stack = Stack()
+    for i in my_list:
+        stack.push(i)
+
+    reversed_list = []
+    for i in range(stack.size()):
+        reversed_list.append(stack.pop())
+
+    return reversed_list
+
+
 if __name__ == '__main__':
     main_artist = list_declaration_1("Aladino")
     # list_append(main_artist)
@@ -198,3 +219,4 @@ if __name__ == '__main__':
     duplicates_list = [1, 2, 3, 2, 3, 1, 4]
     print(find_the_single_element(duplicates_list))
     print(find_the_single_element_with_dict(duplicates_list))
+    print(reverse_list(my_n2))

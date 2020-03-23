@@ -1,3 +1,10 @@
+import random
+import time
+
+from python_structure.data_structures.stacks_queues.stack import Stack
+from python_structure.data_structures.stacks_queues.queue import Queue
+
+
 def negative_index():
     """
     Python allows to use negative index to look up at the elements
@@ -196,6 +203,51 @@ def find_index(phrase: str, letter: str) -> int:
         return -1
 
 
+def reverse_string(string):
+    """
+    Reverse the given string by adding each element to a stack with a for-loop.
+    Then use the 'pop' function of the stack for each element of the stack
+    to get the items from the last to the first and append to a new string variable.
+    :param string: a string
+    :return: reversed 'string'
+    """
+    stack = Stack()
+    for i in string:
+        stack.push(i)
+
+    reversed_s = ""
+    for i in range(stack.size()):
+        reversed_s += stack.pop()
+
+    return reversed_s
+
+
+def simulate_line(till_show, max_time):
+    """
+    Simulate people wait in line to buy tickets for a movie
+    :param till_show: time until the movie starts
+    :param max_time: the longest time it can take to a person to purchase a ticket
+    :return: tickets that have been sold
+    """
+    people = Queue()
+    tickets_sold = []
+
+    for i in range(10):
+        people.enqueue("Bill" + str(i))
+
+    tickets_end = time.time() + till_show
+    now = time.time()
+    while now < tickets_end and not people.is_empty():
+        now = time.time()
+        rand = random.randint(0, max_time)
+        time.sleep(rand)
+        person = people.dequeue()
+        print("Ticket sold to ", person)
+        tickets_sold.append(person)
+
+    return tickets_sold
+
+
 if __name__ == '__main__':
     negative_index()
     my_string = "I am meeting some friends. They're very interesting"
@@ -219,3 +271,5 @@ if __name__ == '__main__':
     print(replace_in_string(my_string, "e", "€"))
 
     print("The letter {} is at index {}".format(letter_y, find_index(my_string, "z")))
+    print(reverse_string("Hello"))
+    print("\n",simulate_line(20, 2))
