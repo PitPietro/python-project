@@ -165,6 +165,19 @@ def find_the_single_element(my_list):
     # return list_dif
 
 
+def find_the_single_element_with_dict(my_list):
+    count = {}
+    for i in my_list:
+        if i not in count:
+            count[i] = 1
+        else:
+            count[i] += 1
+
+    for key, value in count.items():
+        if value == 1:
+            return key
+
+
 if __name__ == '__main__':
     main_artist = list_declaration_1("Aladino")
     # list_append(main_artist)
@@ -184,3 +197,4 @@ if __name__ == '__main__':
     # find_the_single_element
     duplicates_list = [1, 2, 3, 2, 3, 1, 4]
     print(find_the_single_element(duplicates_list))
+    print(find_the_single_element_with_dict(duplicates_list))
