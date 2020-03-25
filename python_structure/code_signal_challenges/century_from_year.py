@@ -1,27 +1,27 @@
 """
-Given a year, return the century it is in. The first century spans from the year 1 up to and including the year 100, the second - from the year 101 up to and including the year 200, etc.
+> Task
+Given a year, return the century it is in. The first century spans from the year 1 up to
+and including the year 100, the second - from the year 101 up to and including the year 200, etc.
 
-Example
+> Example
+|--     input       --|-- output --|
+|--    1 ≤ x ≤ 100  --|--    1   --|
+|--  101 ≤ x ≤ 200  --|--    2   --|
+|--       [...]     --|--   ...  --|
+|-- 1701 ≤ x ≤ 1800 --|--   18   --|
+|-- 1801 ≤ x ≤ 1900 --|--   19   --|
 
-    For year = 1905, the output should be
-    centuryFromYear(year) = 20;
-    For year = 1700, the output should be
-    centuryFromYear(year) = 17.
+> Input/Output
+- execution time limit: 4 seconds (py3)
 
-Input/Output
+- input: integer 'year'
+A positive integer, designating the year.
 
-    [execution time limit] 4 seconds (py3)
+- guaranteed constraints:
+1 ≤ year ≤ 2005.
 
-    [input] integer year
-
-    A positive integer, designating the year.
-
-    Guaranteed constraints:
-    1 ≤ year ≤ 2005.
-
-    [output] integer
-        The number of the century the year is in.
-
+- output: integer
+The number of the century the year is in.
 """
 
 
@@ -45,5 +45,5 @@ def century_from_year(year):
 if __name__ == '__main__':
     for i in range(1, 2006):
         c = century_from_year(i)
-        print(c)
+        print("The year {} belongs to the century n° {}".format(i, c))
         i += 100
