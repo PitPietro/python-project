@@ -13,13 +13,10 @@ and including the year 100, the second - from the year 101 up to and including t
 
 > Input/Output
 - execution time limit: 4 seconds (py3)
-
 - input: integer 'year'
 A positive integer, designating the year.
-
 - guaranteed constraints:
 1 ≤ year ≤ 2005.
-
 - output: integer
 The number of the century the year is in.
 """
