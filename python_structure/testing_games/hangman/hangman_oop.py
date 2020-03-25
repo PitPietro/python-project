@@ -14,8 +14,8 @@ class Hangman:
                   "|        / \    A",
                   "|               N"
                   ]
-        remaining_letters = list(word)
-        board = ["_"] * len(word)
+        remaining_letters = list(self.word)
+        board = ["_"] * len(self.word)
         win = False
         print("Welcome to Hangman \t\t - made by Pit")
         while wrong < len(stages) - 1:
@@ -43,4 +43,4 @@ class Hangman:
         # if Player2 has lost, print the full hangman
         if not win:
             print("\n".join(stages))
-            print("|________________\nYou lose! The word was {}.".format(word))
+            print("|________________\nYou lose! The word was {}.".format(self.word))

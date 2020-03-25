@@ -17,30 +17,44 @@ An array of integers containing at least two elements.
 - output: integer
 The largest product of adjacent elements.
 """
+import sys
 
 
 def adjacent_elements_product(input_array):
     index_1 = 0
     index_2 = 1
-    best_result = 0
-    for i in range(0, int(len(input_array)/2)):
+    best_result = sys.maxsize * -1
+    for i in range(0, int(len(input_array) - 1)):
         digit_1 = input_array[index_1]
         digit_2 = input_array[index_2]
 
         result = digit_1 * digit_2
-        print("index1: {}\tindex2: {}\td1: {}\td2: {}"
+        print("index1: {}\tindex2: {}\t--|--\td1: {}\td2: {}"
               "\nresult: {}".format(index_1, index_2, digit_1, digit_2, result))
 
-        index_1 += 2
-        index_2 += 2
+        index_1 += 1
+        index_2 += 1
 
         if result > best_result:
             best_result = result
 
-    return best_result
+    print("{} ---> {}\n".format(input_array,  best_result))
+    # return best_result
 
 
 if __name__ == '__main__':
-    array = [3, 6, -2, -5, 7, 3]
-    b_r = adjacent_elements_product(array)
-    print("Largest product of adjacent elements:  ", b_r)
+    list_1 = [3, 6, -2, -5, 7, 3]
+    list_2 = [-1, -2]
+    list_3 = [5, 1, 2, 3, 1, 4]
+    list_4 = [5, 6, -4, 2, 3, 2, -23]
+    list_5 = [1, 2, 3, 0]
+    list_6 = [9, 5, 10, 2, 24, -1, -48]
+    list_7 = [-23, 4, -3, 8, -12]
+
+    adjacent_elements_product(list_1)
+    adjacent_elements_product(list_2)
+    adjacent_elements_product(list_3)
+    adjacent_elements_product(list_4)
+    adjacent_elements_product(list_5)
+    adjacent_elements_product(list_6)
+    adjacent_elements_product(list_7)
