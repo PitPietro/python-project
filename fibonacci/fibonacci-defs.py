@@ -83,8 +83,33 @@ def compare_fibonacci_calculators(n: int) -> None:
     ))
 
 
+def fibonacci_list(n):
+    """
+    Return a list of n Fibonacci element
+    :param n: number of list element
+    :return: a list
+    """
+    my_fib = [0, 1]
+
+    if n == 1:
+        return [0]
+    elif n == 2:
+        return my_fib
+    elif n <= 0:
+        pass
+    else:
+        for i in range(0, n - 2):
+            max_index = len(my_fib)
+            element_1 = my_fib[max_index - 2]
+            element_2 = my_fib[max_index - 1]
+            sum_element = element_1 + element_2
+            my_fib.append(sum_element)
+        return my_fib
+
+
 if __name__ == '__main__':
     print(get_fibonacci_iterative(3))
     print(get_fibonacci_recursive(3))
     compare_fibonacci_calculators(3)
     get_fibonacci_iterative_print(3)
+    print(fibonacci_list(-4))
