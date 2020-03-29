@@ -27,7 +27,6 @@ The 3rd permutation in the lexicographically ordered sequence is "213".
 1 ≤ k ≤ min(109, n!).
 - output: string
 A string representing the kth item in the lexicographically ordered permutation sequence for n!.
-
 """
 
 
