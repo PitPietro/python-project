@@ -40,7 +40,34 @@ def almost_increasing_sequence(sequence):
         return False
 
 
+def almost_increasing_sequence_v2(sequence):
+    dropped = False
+    last = prev = min(sequence) - 1
+    for elements in sequence:
+        if elements <= last:
+            if dropped:
+                return False
+            else:
+                dropped = True
+            if elements <= prev:
+                prev = last
+            elif elements >= prev:
+                prev = last = elements
+        else:
+            prev, last = last, elements
+        print("prev: {}\tlast: {}\tdropped: {}\t element: {}".format(prev, last, dropped, elements))
+    return True
+
+
+def almost_increasing_sequence_v3(s):
+    return 3 > sum((i >= j) + (i >= k) for i, j, k in zip(s, s[1:], s[2:] + [10 ** 6]))
+
+
 if __name__ == '__main__':
-    list_7 = [10, 1, 2, 3, 4, 5, 3, 5, 6]
+    list_7 = [10, 1, 2, 3, 4, 5]
     b = almost_increasing_sequence(list_7)
+    print(b)
+    c = almost_increasing_sequence_v2(list_7)
+    print(c)
+    b = almost_increasing_sequence_v3(list_7)
     print(b)
