@@ -19,21 +19,12 @@ A string consisting of lowercase English letters.
 
 def common_character_count(s1, s2):
     num = 0
-    my_list = []
-    str_l = len(s1)
     for i in s1:
-        my_list.append(i)
-        print("i: {}".format(i))
-    print("list: {}".format(my_list))
-    for j in s2:
-        my_list.append(j)
-        print("j: {}".format(j))
-    print("list: {}".format(my_list))
-
-    for k in range(len(my_list) - str_l):
-        if my_list[k] == my_list[k + str_l]:
-            num += 1
-        print("k: {}\t{} -- {}\t{}".format(k, my_list[k], my_list[k + 1], num))
+        for j in s2:
+            if i == j:
+                num += 1
+                break
+            print("i: {}\tj: {}\tnum: {}".format(i, j, num))
     return num
 
 
