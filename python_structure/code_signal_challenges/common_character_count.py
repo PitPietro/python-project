@@ -21,10 +21,12 @@ def common_character_count(s1, s2):
     num = 0
     for i in s1:
         for j in s2:
+            print("i: {}\tj: {}\tnum: {}".format(i, j, num))
             if i == j:
                 num += 1
+                s2 = s2.replace(j, " ")
+                print("s2: ", s2)
                 break
-            print("i: {}\tj: {}\tnum: {}".format(i, j, num))
     return num
 
 

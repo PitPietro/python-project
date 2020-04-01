@@ -248,6 +248,32 @@ def simulate_line(till_show, max_time):
     return tickets_sold
 
 
+def string_intersection(s1, s2):
+    """
+    Create an empty string and check for new occurrence of character
+    common to both string and appending it. Hence computing the new
+    intersection string.
+    :param s1:
+    :param s2:
+    :return:
+    """
+    result = ""
+    for i in s1:
+        if i in s2 and i not in result:
+            result += i
+    return result
+
+
+def string_intersection_v2(s1, s2):
+    """
+    The strings are converted into sets and then return the intersection.
+    :param s1:
+    :param s2:
+    :return: sorted set
+    """
+    return set(s1).intersection(s2)
+
+
 if __name__ == '__main__':
     negative_index()
     my_string = "I am meeting some friends. They're very interesting"
@@ -272,4 +298,9 @@ if __name__ == '__main__':
 
     print("The letter {} is at index {}".format(letter_y, find_index(my_string, "z")))
     print(reverse_string("Hello"))
-    print("\n",simulate_line(20, 2))
+    print("\n", simulate_line(20, 2))
+
+    a = "aabcc"
+    b = "adcaa"
+    print(string_intersection(a, b))
+    print(string_intersection_v2(a, b))
