@@ -18,20 +18,20 @@ A string consisting of lowercase English letters.
 
 
 def common_character_count(s1, s2):
-    num = 0
-    for i in s1:
-        for j in s2:
-            print("i: {}\tj: {}\tnum: {}".format(i, j, num))
-            if i == j:
-                num += 1
-                s2 = s2.replace(j, " ")
-                print("s2: ", s2)
-                break
-    return num
+    common = [min(s1.count(i), s2.count(i)) for i in set(s1)]
+    return sum(common)
+
+
+def common_character_count_v2(s1, s2):
+    count = 0
+    commons = set(s1) & set(s2)
+    for i in commons:
+        count += min(s1.count(i), s2.count(i))
+    return count
 
 
 if __name__ == '__main__':
     a = "aabcc"
     b = "adcaa"
-    r = common_character_count(a, b)
-    print(r)
+    print(common_character_count(a, b))
+    print(common_character_count_v2(a, b))
