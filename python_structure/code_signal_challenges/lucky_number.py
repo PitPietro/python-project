@@ -36,6 +36,19 @@ def is_lucky(n):
         second_sum += int(str_n[j])
         print("2nd half sum: {}\tsum: {}".format(j, second_sum))
 
+    if first_sum == second_sum:
+        return True
+    else:
+        return False
+
+
+def is_lucky_v2(n):
+    s = str(n)
+    pivot = len(s) // 2
+    left, right = s[:pivot], s[pivot:]
+    return sum(map(int, left)) == sum(map(int, right))
+
 
 if __name__ == '__main__':
     print(is_lucky(1230))
+    print(is_lucky_v2(1230))
