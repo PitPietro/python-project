@@ -38,21 +38,47 @@ def reverse(string):
 def reverse_in_parentheses(input_string):
     normal_s = ""
     rev_s = ""
+    strings = list()
+    par_num = 0
+    max_num = 0
+    list_value = list(list())
     for i, s in enumerate(input_string):
         if s == "(":
-            rev_s = ""
-            rev_s += s
+            par_num += 1
+            max_num += 1
         elif s == ")":
-            normal_s += reverse(rev_s)
-        else:
-            normal_s += s
-        print("i: {}| s: {}| string: {}|  rev_s: {}".format(i, s, normal_s, rev_s))
+            par_num -= 1
+        list_value.append([par_num, s])
+        print("i: {}| s: {}| par_num: {}|  list_value: {}".format(i, s, par_num, list_value))
+    for k in range(max_num + 1):
+        strings.append(list())
+        print("k: {}| max: {}| strings: {}".format(k, max_num, strings))
+
+    for i, j in enumerate(list_value):
+        strings[j[0]].append(j[1])
+        print("i: {}| j: {}| j[0]: {}| j[1]: {}| strings: {}".format(i, j, j[0], j[1], strings))
     return normal_s
+
+
+def rev(s):
+    for i in range(len(s)):
+        if s[i] == "(":
+            start = i
+            print("start: {}".format(start))
+        if s[i] == ")":
+            end = i
+            print("end: {}".format(end))
+            return rev(s[:start] + s[start + 1:end][::-1] + s[end + 1:])
+    return s
+
+
+# props to vanpet90 for his genious idea to use eval in the previous version of this task
+def reverse_in_parentheses_v2(s):
+    return eval('"' + s.replace('(', '"+("').replace(')', '")[::-1]+"') + '"')
 
 
 def test_enumerate(string_to_e):
     for i, s in enumerate(string_to_e):
-        i += 1
         print("i: {}| s: {}| string: {}".format(i, s, string_to_e))
 
 
@@ -64,7 +90,7 @@ if __name__ == '__main__':
 
     # test_enumerate("abcde")
 
-    print(reverse_in_parentheses(test_1))
-    # print(reverse_in_parentheses(test_2))
-    # print(reverse_in_parentheses(test_3))
-    # print(reverse_in_parentheses(test_4))
+    print(rev(test_1))
+    print(rev(test_2))
+    print(rev(test_3))
+    print(rev(test_4))
