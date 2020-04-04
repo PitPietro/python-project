@@ -28,13 +28,15 @@ def add_border(picture):
 
     for i, j in enumerate(res_list):
         if i == 0 or i == len(res_list) - 1:
-            for k in range(border):
-                j.append("*")
+            j.append("*" * border)
         else:
-            j.append("*")
-            for k in picture[i - 1]:
-                j.append(k)
-            j.append("*")
+            tmp_string = "*"
+            # j += "*"
+            tmp_string += picture[i - 1]
+            # j += "*"
+            tmp_string += "*"
+            j.append(tmp_string)
+            print("tmp string: {}".format(tmp_string))
         print("i: {}| j: {}".format(i, j))
     return res_list
 
