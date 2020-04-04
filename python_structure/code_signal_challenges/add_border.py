@@ -26,6 +26,18 @@ def add_border(picture):
         res_list.append([])
         print("result list: {}".format(res_list))
 
+    for i, j in enumerate(res_list):
+        if i == 0 or i == len(res_list) - 1:
+            for k in range(border):
+                j.append("*")
+        else:
+            j.append("*")
+            for k in picture[i - 1]:
+                j.append(k)
+            j.append("*")
+        print("i: {}| j: {}".format(i, j))
+    return res_list
+
 
 if __name__ == '__main__':
     test_1 = ["abc", "ded"]
@@ -34,4 +46,8 @@ if __name__ == '__main__':
     test_4 = ["abcde", "fghij", "klmno", "pqrst", "uvwxy"]
     test_5 = ["wzy**"]
 
-    add_border(test_1)
+    print(add_border(test_1))
+    print(add_border(test_2))
+    print(add_border(test_3))
+    print(add_border(test_4))
+    print(add_border(test_5))
