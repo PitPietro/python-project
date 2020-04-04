@@ -23,15 +23,17 @@ The missing number.
 def missing_number(array):
     array.sort()
     num = 0
+    if array == [0]:
+        return 1
+    elif array[0] > 0:
+        return 0
     for i, j in enumerate(array):
         print("i: {}| j: {}| array: {}| num: {}".format(i, j, array, num))
         if num == j:
             num += 1
-        else:
-            array.append(num)
+        elif num != j:
+            return num
         print("i: {}| j: {}| array: {}| num: {}".format(i, j, array, num))
-    temp = set(array)
-    array = list(temp)
     return num
 
 
@@ -48,5 +50,15 @@ if __name__ == '__main__':
     test_5 = [3, 1, 2]
     # 0
     test_6 = [3, 2, 1]
+    # 4
+    test_7 = [5, 2, 1, 6, 3, 0]
+    # 1
+    test_8 = [8, 6, 7, 0, 2, 5, 4, 3]
+    # 9
+    test_9 = [0, 3, 5, 8, 4, 6, 1, 9, 7]
+    # 0
+    test_10 = [2, 9, 8, 1, 3, 6, 7, 4, 5]
+    # 8
+    test_11 = [9, 6, 4, 2, 3, 5, 7, 0, 1]
 
-    print(missing_number(test_3))
+    print(missing_number_v2(test_9))
