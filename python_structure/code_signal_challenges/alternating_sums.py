@@ -35,10 +35,38 @@ def alternating_sums(a):
     print("\n\nteam 1: {}\nteam 2: {}".format(team_1, team_2))
     element_1 = sum(team_1)
     element_2 = sum(team_2)
-    print("\n\nsum 1: {}\nsum 2: {}".format(element_1, element_2))
+    print("\nsum 1: {}\nsum 2: {}".format(element_1, element_2))
     return [sum(team_1), sum(team_2)]
+
+
+def alternating_sums_v2(a):
+    return [sum(a[::2]), sum(a[1::2])]
+
+
+def alternating_sums_v3(a):
+    sums = [0, 0]
+    for i, w in enumerate(a):
+        sums[i % 2] += w
+    return sums
 
 
 if __name__ == '__main__':
     test_1 = [50, 60, 60, 45, 70]
+    test_2 = [100, 50]
+    test_3 = [80]
+    test_4 = [100, 50, 50, 100]
+
     print(alternating_sums(test_1))
+    print(alternating_sums(test_2))
+    print(alternating_sums(test_3))
+    print(alternating_sums(test_4))
+
+    print(alternating_sums_v2(test_1))
+    print(alternating_sums_v2(test_2))
+    print(alternating_sums_v2(test_3))
+    print(alternating_sums_v2(test_4))
+
+    print(alternating_sums_v3(test_1))
+    print(alternating_sums_v3(test_2))
+    print(alternating_sums_v3(test_3))
+    print(alternating_sums_v3(test_4))
