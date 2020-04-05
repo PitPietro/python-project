@@ -33,16 +33,16 @@ def are_similar(a, b):
         return True
     if not diff(a, b):
         for i in range(len(a)):
-            for j in range(len(b) - 1):
-                print("i: {}| j: {}| b[i]: {}| b[i + 1]: {}| b: {}".format(i, j, b[i], b[i + 1], b))
+            for j in range(len(b)):
                 temp_b = b
-                temp_b[j], temp_b[j + 1] = temp_b[j + 1], temp_b[j]
-
+                print("i: {}| j: {}| b[j]: {}| b[i]: {}".format(i, j, b[j], b[i]))
+                if i != j and a[j] != b[j]:
+                    temp_b[j], temp_b[i] = temp_b[i], temp_b[j]
+                    print("\nb: {}\na: {}\n".format(temp_b, a))
                 if temp_b == a:
                     return True
         return False
-    else:
-        return False
+    return False
 
 
 def diff(list_1, list_2):
@@ -94,6 +94,6 @@ if __name__ == '__main__':
     # print(are_similar(test_5_a, test_5_b))
     # print(are_similar(test_6_a, test_6_b))
     # print(are_similar(test_7_a, test_7_b))
-    print(are_similar(test_8_a, test_8_b))
-    # print(are_similar(test_9_a, test_9_b))
+    # print(are_similar(test_8_a, test_8_b))
+    print(are_similar(test_9_a, test_9_b))
     # print(are_similar(test_10_a, test_10_b))
