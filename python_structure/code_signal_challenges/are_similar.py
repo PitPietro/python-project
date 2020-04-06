@@ -98,13 +98,13 @@ if __name__ == '__main__':
     test_10_a = [832, 998, 148, 570, 533, 561, 894, 147, 455, 279]
     test_10_b = [832, 570, 148, 998, 533, 561, 455, 147, 894, 279]
 
-    # print(are_similar(test_1_a, test_1_b))
+    print(are_similar(test_1_a, test_1_b))
     print(are_similar(test_2_a, test_2_b))
-    # print(are_similar(test_3_a, test_3_b))
-    # print(are_similar(test_4_a, test_4_b))
-    # print(are_similar(test_5_a, test_5_b))
-    # print(are_similar(test_6_a, test_6_b))
-    # print(are_similar(test_7_a, test_7_b))
-    # print(are_similar(test_8_a, test_8_b))
-    # print(are_similar(test_9_a, test_9_b))
-    # print(are_similar(test_10_a, test_10_b))
+    print(are_similar(test_3_a, test_3_b))
+    print(are_similar(test_4_a, test_4_b))
+    print(are_similar(test_5_a, test_5_b))
+    print(are_similar(test_6_a, test_6_b))
+    print(are_similar(test_7_a, test_7_b))
+    print(are_similar(test_8_a, test_8_b))
+    print(are_similar(test_9_a, test_9_b))
+    print(are_similar(test_10_a, test_10_b))
