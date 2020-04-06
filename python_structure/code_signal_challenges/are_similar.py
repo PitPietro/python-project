@@ -26,23 +26,23 @@ b.length = a.length,
 - output: boolean
 true if a and b are similar, false otherwise.
 """
+from collections import Counter as C
 
 
 def are_similar(a, b):
     if a == b:
         return True
-    if not diff(a, b):
+    else:
         for i in range(len(a)):
             for j in range(len(b)):
-                temp_b = b
-                print("i: {}| j: {}| b[j]: {}| b[i]: {}".format(i, j, b[j], b[i]))
-                if i != j and a[j] != b[j]:
+                temp_b = list(b)
+                if i != j:
+                    print("b[{}]: {}| b[{}]: {}".format(i, b[i], j, b[j]))
                     temp_b[j], temp_b[i] = temp_b[i], temp_b[j]
-                    print("\nb: {}\na: {}\n".format(temp_b, a))
-                if temp_b == a:
-                    return True
+                    print("b: {}| temp_b: {}".format(b, temp_b))
+                    if temp_b == a:
+                        return True
         return False
-    return False
 
 
 def diff(list_1, list_2):
@@ -53,6 +53,17 @@ def diff(list_1, list_2):
     :return: list
     """
     return list(set(list_1) - set(list_2))
+
+
+def are_equal(a, b):
+    if a == b:
+        return True
+    else:
+        return False
+
+
+def are_similar_v2(a, b):
+    return C(a) == C(b) and sum(a != b for a, b in zip(a, b)) < 3
 
 
 if __name__ == '__main__':
@@ -88,12 +99,12 @@ if __name__ == '__main__':
     test_10_b = [832, 570, 148, 998, 533, 561, 455, 147, 894, 279]
 
     # print(are_similar(test_1_a, test_1_b))
-    # print(are_similar(test_2_a, test_2_b))
+    print(are_similar(test_2_a, test_2_b))
     # print(are_similar(test_3_a, test_3_b))
     # print(are_similar(test_4_a, test_4_b))
     # print(are_similar(test_5_a, test_5_b))
     # print(are_similar(test_6_a, test_6_b))
     # print(are_similar(test_7_a, test_7_b))
     # print(are_similar(test_8_a, test_8_b))
-    print(are_similar(test_9_a, test_9_b))
+    # print(are_similar(test_9_a, test_9_b))
     # print(are_similar(test_10_a, test_10_b))
