@@ -39,7 +39,15 @@ true if you and your friend are equally strong, false otherwise.
 
 
 def are_equally_strong(your_left, your_right, friends_left, friends_right):
-    pass
+    your_max = max(your_left, your_right)
+    your_min = min(your_left, your_right)
+    friends_max = max(friends_left, friends_right)
+    friends_min = min(friends_left, friends_right)
+
+    if your_max == friends_max and your_min == friends_min:
+        return True
+    else:
+        return False
 
 
 if __name__ == '__main__':
