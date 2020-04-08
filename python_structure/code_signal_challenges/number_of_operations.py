@@ -26,7 +26,14 @@ For (a, b) = (432, 72) there will be 4 such operations:
 
 
 def number_of_operations(a, b):
-    pass
+    count = 0
+    while a % b == 0 or b % a == 0:
+        if a % b == 0:
+            a /= b
+        else:
+            b /= a
+        count += 1
+    return count
 
 
 if __name__ == '__main__':
