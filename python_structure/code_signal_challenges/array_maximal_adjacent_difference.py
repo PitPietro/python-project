@@ -16,12 +16,26 @@ The maximal absolute difference.
 
 
 def array_maximal_adjacent_difference(input_array):
-    pass
+    abs_diff = 0
+    for i in range(len(input_array) - 1):
+        diff = abs(input_array[i] - input_array[i + 1])
+        print("diff: {} =  {} - {}".format(diff, input_array[i], input_array[i + 1]))
+        if diff > abs_diff:
+            abs_diff = diff
+    return abs_diff
+
+
+def array_maximal_adjacent_difference_v2(input_array):
+    abs_diff = []
+    for i in range(len(input_array) - 1):
+        abs_diff.append(abs(input_array[i] - input_array[i + 1]))
+    return max(abs_diff)
 
 
 if __name__ == '__main__':
     # 3
     print(array_maximal_adjacent_difference([2, 4, 1, 0]))
+    print(array_maximal_adjacent_difference_v2([2, 4, 1, 0]))
     # 0
     print(array_maximal_adjacent_difference([1, 1, 1, 1]))
     # 7
