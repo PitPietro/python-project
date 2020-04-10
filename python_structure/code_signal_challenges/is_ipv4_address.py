@@ -26,23 +26,57 @@ from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 
 def is_ipv4_address(ip):
+    """
+    TODO Errors are due to the fact that numbers can take ONLY 3 position, while they could take less.
+    The for-loops are too much static.
+    :param ip:
+    :return:
+    """
     if not 7 < len(ip) < 15:
         print("\tlength: {}".format(len(ip)))
         return False
-    range_n = [0, 255]
-    n_1 = ""
-    for i in range(3):
-        if ip[i].isdigit():
-            n_1 += ip[i]
-            print("\tip[{}]: {}| n_1: {}".format(i, ip[i], n_1))
+    r = [0, 4, 8]
+    for i in range(len(r)):
+        number = ""
+        for j in range(4):
+            index = j + r[i]
+            if j < 3:
+                if ip[index].isdigit():
+                    number += ip[index]
+                    print("\tip[{}]: {}| n_1: {}".format(index, ip[index], number))
+                else:
+                    return False
+            elif ip[index] != ".":
+                return False
+            if int(number) >= 255:
+                return False
+    number_4 = ""
+    for k in range(12, 16):
+        if ip[k].isdigit():
+            number_4 += ip[k]
+            print("\tip[{}]: {}| n_1: {}".format(k, ip[k], number_4))
         else:
             return False
-    if int(n_1) >= 255:
+    if int(number_4) >= 255:
         return False
     return True
 
 
+def double_for_range():
+    """
+    print 3 ranges
+    :return: None
+    """
+    r = [0, 4, 8]
+    for i in range(len(r)):
+        for j in range(4):
+            index = j + r[i]
+            print(index)
+        print("_")
+
+
 if __name__ == '__main__':
+    double_for_range()
     is_correct(is_ipv4_address("172.16.254.1"), True)
     is_correct(is_ipv4_address("172.316.254.1"), False)
     is_correct(is_ipv4_address(".254.255.0"), False)
