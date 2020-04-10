@@ -22,21 +22,13 @@ A string consisting of digits, full stops and lowercase English letters.
 - output: boolean
 true if inputString satisfies the IPv4 address naming rules, false otherwise.
 """
+from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 
 def is_ipv4_address(ip):
     range_n = [0, 255]
-    if len(ip) > 5:
+    for i in range(len(ip)):
         return True
-    else:
-        return False
-
-
-def is_correct(def_res, result):
-    if def_res == result:
-        print("Correct")
-    else:
-        print("INCORRECT")
 
 
 if __name__ == '__main__':
