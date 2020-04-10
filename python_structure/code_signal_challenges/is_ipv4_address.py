@@ -26,9 +26,20 @@ from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 
 def is_ipv4_address(ip):
+    if not 7 < len(ip) < 15:
+        print("\tlength: {}".format(len(ip)))
+        return False
     range_n = [0, 255]
-    for i in range(len(ip)):
-        return True
+    n_1 = ""
+    for i in range(3):
+        if ip[i].isdigit():
+            n_1 += ip[i]
+            print("\tip[{}]: {}| n_1: {}".format(i, ip[i], n_1))
+        else:
+            return False
+    if int(n_1) >= 255:
+        return False
+    return True
 
 
 if __name__ == '__main__':
