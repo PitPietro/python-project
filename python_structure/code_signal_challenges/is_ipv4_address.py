@@ -27,39 +27,27 @@ from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 def is_ipv4_address(ip):
     """
-    TODO Errors are due to the fact that numbers can take ONLY 3 position, while they could take less.
-    The for-loops are too much static.
+    step 1: find the dots' indexes
+    step 2: check if the strings between the dots are digit
     :param ip:
     :return:
     """
     if not 7 < len(ip) < 15:
         print("\tlength: {}".format(len(ip)))
         return False
-    r = [0, 4, 8]
-    for i in range(len(r)):
-        number = ""
-        for j in range(4):
-            index = j + r[i]
-            if j < 3:
-                if ip[index].isdigit():
-                    number += ip[index]
-                    print("\tip[{}]: {}| n_1: {}".format(index, ip[index], number))
-                else:
-                    return False
-            elif ip[index] != ".":
-                return False
-            if int(number) >= 255:
-                return False
-    number_4 = ""
-    for k in range(12, 16):
-        if ip[k].isdigit():
-            number_4 += ip[k]
-            print("\tip[{}]: {}| n_1: {}".format(k, ip[k], number_4))
-        else:
-            return False
-    if int(number_4) >= 255:
-        return False
-    return True
+    indexes = []
+    for i in range(len(ip)):
+        if ip[i] == ".":
+            indexes.append(i)
+
+    # number_4 = ""
+    # for k in range(12, 16):
+    #     if ip[k].isdigit():
+    #         number_4 += ip[k]
+    #         print("\tip[{}]: {}| n_1: {}".format(k, ip[k], number_4))
+    #     else:
+    #         return False
+    # return True
 
 
 def double_for_range():
@@ -76,7 +64,7 @@ def double_for_range():
 
 
 if __name__ == '__main__':
-    double_for_range()
+    # double_for_range()
     is_correct(is_ipv4_address("172.16.254.1"), True)
     is_correct(is_ipv4_address("172.316.254.1"), False)
     is_correct(is_ipv4_address(".254.255.0"), False)
