@@ -23,6 +23,7 @@ A string consisting of digits, full stops and lowercase English letters.
 true if inputString satisfies the IPv4 address naming rules, false otherwise.
 """
 from python_structure.code_signal_challenges.result_is_correct import is_correct
+import time
 
 
 def is_ipv4_address(ip):
@@ -33,21 +34,40 @@ def is_ipv4_address(ip):
     :return:
     """
     if not 7 < len(ip) < 15:
-        print("\tlength: {}".format(len(ip)))
+        # print("\tlength: {}".format(len(ip)))
         return False
     indexes = []
     for i in range(len(ip)):
         if ip[i] == ".":
             indexes.append(i)
+    num_1 = is_number(ip, 0, indexes[0])
+    num_2 = is_number(ip, indexes[0] + 1, indexes[1])
+    num_3 = is_number(ip, indexes[1] + 1, indexes[2])
+    num_4 = is_number(ip, indexes[2] + 1, len(ip))
+    # print(num_1)
+    # print(num_2)
+    # print(num_3)
+    # print(num_4)
+    if num_1 == -1 or num_2 == -1 or num_3 == -1 or num_4 == -1:
+        return False
+    else:
+        return True
 
-    # number_4 = ""
-    # for k in range(12, 16):
-    #     if ip[k].isdigit():
-    #         number_4 += ip[k]
-    #         print("\tip[{}]: {}| n_1: {}".format(k, ip[k], number_4))
-    #     else:
-    #         return False
-    # return True
+
+def is_number(ip_add, start_i, end_i):
+    num = ""
+    for j in range(start_i, end_i):
+        digit = ip_add[j]
+        if digit.isdigit():
+            num += ip_add[j]
+        else:
+            return -1
+    if num == "" or num == "00" or num == "000" or int(num) > 255:
+        return -1
+    if num.startswith("0") and len(num) > 1:
+        return -1
+    else:
+        return num
 
 
 def double_for_range():
@@ -65,6 +85,7 @@ def double_for_range():
 
 if __name__ == '__main__':
     # double_for_range()
+    start_t = time.clock()
     is_correct(is_ipv4_address("172.16.254.1"), True)
     is_correct(is_ipv4_address("172.316.254.1"), False)
     is_correct(is_ipv4_address(".254.255.0"), False)
@@ -86,3 +107,5 @@ if __name__ == '__main__':
     is_correct(is_ipv4_address("255.255.255.255abcdekjhf"), False)
     is_correct(is_ipv4_address("7283728"), False)
     is_correct(is_ipv4_address("0..1.0.0"), False)
+    end_t = time.clock()
+    print("time: {} seconds".format(end_t - start_t))
