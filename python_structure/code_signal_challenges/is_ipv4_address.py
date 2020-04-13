@@ -24,6 +24,7 @@ true if inputString satisfies the IPv4 address naming rules, false otherwise.
 """
 from python_structure.code_signal_challenges.result_is_correct import is_correct
 import time
+import ipaddress
 
 
 def is_ipv4_address(ip):
@@ -85,9 +86,18 @@ def double_for_range():
         print("_")
 
 
+def is_ipv4_address_built_in(ip_v4):
+    try:
+        ipaddress.ip_address(ip_v4)
+    except ValueError:
+        return False
+    return True
+
+
 if __name__ == '__main__':
     # double_for_range()
-    start_t = time.clock()
+    print("Pit-made function:")
+    start_pit = time.clock()
     is_correct(is_ipv4_address("172.16.254.1"), True)
     is_correct(is_ipv4_address("172.316.254.1"), False)
     is_correct(is_ipv4_address(".254.255.0"), False)
@@ -113,5 +123,35 @@ if __name__ == '__main__':
     is_correct(is_ipv4_address("0..1.0.0"), False)
     is_correct(is_ipv4_address("1.1.1.1"), True)
     is_correct(is_ipv4_address("255.255.255.255"), True)
-    end_t = time.clock()
-    print("time: {} seconds".format(end_t - start_t))
+    end_pit = time.clock()
+    res_pit = end_pit - start_pit
+    print("\nis_ipv4_address_built_in function:")
+    start_b = time.clock()
+    is_correct(is_ipv4_address_built_in("172.16.254.1"), True)
+    is_correct(is_ipv4_address_built_in("172.316.254.1"), False)
+    is_correct(is_ipv4_address_built_in(".254.255.0"), False)
+    is_correct(is_ipv4_address_built_in("1.1.1.1a"), False)
+    is_correct(is_ipv4_address_built_in("1"), False)
+    is_correct(is_ipv4_address_built_in("0.254.255.0"), True)
+    is_correct(is_ipv4_address_built_in("1.23.256.255."), False)
+    is_correct(is_ipv4_address_built_in("1.23.256.."), False)
+    is_correct(is_ipv4_address_built_in("0..1.0"), False)
+    is_correct(is_ipv4_address_built_in("64.233.161.00"), False)
+    is_correct(is_ipv4_address_built_in("64.00.161.131"), False)
+    is_correct(is_ipv4_address_built_in("01.233.161.131"), False)
+    is_correct(is_ipv4_address_built_in("35..36.9.9.0"), False)
+    is_correct(is_ipv4_address_built_in("1.1.1.1.1"), False)
+    is_correct(is_ipv4_address_built_in("1.256.1.1"), False)
+    is_correct(is_ipv4_address_built_in("a0.1.1.1"), False)
+    is_correct(is_ipv4_address_built_in("0.1.1.256"), False)
+    is_correct(is_ipv4_address_built_in("129380129831213981.255.255.255"), False)
+    is_correct(is_ipv4_address_built_in("255.255.255.255abcdekjhf"), False)
+    is_correct(is_ipv4_address_built_in("7283728"), False)
+    is_correct(is_ipv4_address_built_in("00001.100.1.10.m0"), False)
+    is_correct(is_ipv4_address_built_in("111222333444"), False)
+    is_correct(is_ipv4_address_built_in("0..1.0.0"), False)
+    is_correct(is_ipv4_address_built_in("1.1.1.1"), True)
+    is_correct(is_ipv4_address_built_in("255.255.255.255"), True)
+    end_b = time.clock()
+    res_b = end_b - start_b
+    print("\npit time:\t\t{} sec\nbuilt-in time:\t{} sec".format(res_pit, res_b))
