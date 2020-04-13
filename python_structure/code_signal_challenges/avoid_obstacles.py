@@ -23,7 +23,8 @@ from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 
 def avoid_obstacles(i_list):
-    pass
+    i_list.sort()
+    print(i_list)
 
 
 if __name__ == '__main__':
