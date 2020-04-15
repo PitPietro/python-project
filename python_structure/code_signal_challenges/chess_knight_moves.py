@@ -21,6 +21,7 @@ cell.length = 2,
 1 ≤ cell[1] ≤ 8.
 - output: integer
 """
+from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 
 def chess_knight_moves(cell):
@@ -45,6 +46,20 @@ def chess_knight_moves(cell):
     # make a range all around the knight.
     for dx in range(-2, 3):
         for dy in range(-2, 3):
-            print("{}; {}".format(dx, dy))
-            result += 2
+            if is_valid(dx) and is_valid(dy):
+                print("{}; {}".format(dx, dy))
+                result += 1
     return result
+
+
+if __name__ == '__main__':
+    is_correct(chess_knight_moves("a1"), 2)
+    is_correct(chess_knight_moves("c2"), 6)
+    is_correct(chess_knight_moves("h8"), 2)
+    is_correct(chess_knight_moves("d5"), 8)
+    is_correct(chess_knight_moves("a2"), 3)
+    is_correct(chess_knight_moves("h7"), 3)
+    is_correct(chess_knight_moves("h6"), 4)
+    is_correct(chess_knight_moves("b2"), 4)
+    is_correct(chess_knight_moves("f4"), 8)
+    is_correct(chess_knight_moves("a1"), 2)
