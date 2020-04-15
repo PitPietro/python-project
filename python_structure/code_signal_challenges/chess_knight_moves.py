@@ -41,7 +41,7 @@ def chess_knight_moves(cell):
     result = 0
 
     # (x; y)
-    print("{} is at position: ({}; {})".format(cell, current_x, current_y))
+    print("\n{} is at position: ({}; {})".format(cell, current_x, current_y))
 
     # make a range all around the knight.
     for dx in range(-2, 3):
@@ -51,7 +51,14 @@ def chess_knight_moves(cell):
             if is_valid(range_x) and is_valid(range_y):
                 # the cells around the knight which are on the chessboard
                 print("({}; {})\t({}; {})".format(dx, dy, current_x + dx, current_y + dy))
-                if (current_x + dx == current_x + 2 and dy == current_y + 1) or (dx == current_x + 1 and dy == current_y + 2):
+                if (dx == 2 and dy == 1)\
+                        or (dx == 2 and dy == -1)\
+                        or (dx == 1 and dy == 2)\
+                        or (dx == 1 and dy == -2)\
+                        or (dx == -2 and dy == 1)\
+                        or (dx == -2 and dy == -1)\
+                        or (dx == -1 and dy == 2)\
+                        or (dx == -1 and dy == -2):
                     result += 1
                     print("result: {}".format(result))
     return result
