@@ -5,7 +5,7 @@ https://app.codesignal.com/tournaments/qhfBzmNJ5uGu7rxha/B
 Given a position of a knight on the standard chessboard, find the number of different moves the knight can perform.
 The knight can move to a square that is two squares horizontally and one square vertically, or two squares vertically
 and one square horizontally away from it. The complete move therefore looks like the letter L. Check out the image
-below to see all valid moves for a knight piece that is placed on one of the central squares.
+'knight.jpg' to see all valid moves for a knight piece that is placed on one of the central squares.
 
 > Example
 For cell = "a1", the output should be 2.
@@ -51,7 +51,7 @@ def chess_knight_moves(cell):
             if is_valid(dx) and is_valid(dy):
                 # the cells around the knight which are on the chessboard
                 print("({}; {})\t({}; {})".format(dx, dy, current_x + dx, current_y + dy))
-                if (current_x - dx == 2 and dy == current_y + 1) or (dx == current_x + 1 and dy == current_y + 2):
+                if (dx == current_x + 2 and dy == current_y + 1) or (dx == current_x + 1 and dy == current_y + 2):
                     result += 1
                     print("result: {}".format(result))
     return result
