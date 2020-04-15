@@ -48,10 +48,10 @@ def chess_knight_moves(cell):
         for dy in range(-2, 3):
             range_x = current_x + dx
             range_y = current_y + dy
-            if is_valid(dx) and is_valid(dy):
+            if is_valid(range_x) and is_valid(range_y):
                 # the cells around the knight which are on the chessboard
                 print("({}; {})\t({}; {})".format(dx, dy, current_x + dx, current_y + dy))
-                if (dx == current_x + 2 and dy == current_y + 1) or (dx == current_x + 1 and dy == current_y + 2):
+                if (current_x + dx == current_x + 2 and dy == current_y + 1) or (dx == current_x + 1 and dy == current_y + 2):
                     result += 1
                     print("result: {}".format(result))
     return result
