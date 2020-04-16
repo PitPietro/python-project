@@ -30,18 +30,27 @@ def avoid_obstacles(i_list):
         print("i: {}".format(i))
         if i in i_list:
             print("i is in the list")
-        tmp_r = result
         tmp_list = list()
-        tmp_list.append(tmp_r)
-        for j in range(my_range):
-            tmp_r += i
+        tmp_r = result
+        while tmp_r < my_range + i:
             tmp_list.append(tmp_r)
-            print("j: {}|\tr: {}\tlist: {}".format(j, tmp_r, tmp_list))
+            tmp_r += result
+            print("value: {}| list: {}".format(tmp_r, tmp_list))
+        comp_list = compare_lists(tmp_list, i_list)
+        print("com_list: {}".format(comp_list))
+        if comp_list == set():
+            print("temp r: {}| result: {}".format(tmp_r, result))
+            return result
         result += 1
     print(i_list)
 
 
+def compare_lists(a, b):
+    return set(a) & set(b)
+
+
 if __name__ == '__main__':
+    # print(compare_lists([1, 2, 3], [1, 4, 5]))
     is_correct(avoid_obstacles([5, 3, 6, 7, 9]), 4)
     # is_correct(avoid_obstacles([2, 3]), 4)
     # is_correct(avoid_obstacles([1, 4, 10, 6, 2]), 7)
