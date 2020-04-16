@@ -24,13 +24,27 @@ from python_structure.code_signal_challenges.result_is_correct import is_correct
 
 def avoid_obstacles(i_list):
     i_list.sort()
+    result = 1
+    my_range = i_list[-1] + 2
+    for i in range(1, my_range):
+        print("i: {}".format(i))
+        if i in i_list:
+            print("i is in the list")
+        tmp_r = result
+        tmp_list = list()
+        tmp_list.append(tmp_r)
+        for j in range(my_range):
+            tmp_r += i
+            tmp_list.append(tmp_r)
+            print("j: {}|\tr: {}\tlist: {}".format(j, tmp_r, tmp_list))
+        result += 1
     print(i_list)
 
 
 if __name__ == '__main__':
     is_correct(avoid_obstacles([5, 3, 6, 7, 9]), 4)
-    is_correct(avoid_obstacles([2, 3]), 4)
-    is_correct(avoid_obstacles([1, 4, 10, 6, 2]), 7)
-    is_correct(avoid_obstacles([1000, 999]), 6)
-    is_correct(avoid_obstacles([19, 32, 11, 23]), 3)
-    is_correct(avoid_obstacles([5, 8, 9, 13, 14]), 6)
+    # is_correct(avoid_obstacles([2, 3]), 4)
+    # is_correct(avoid_obstacles([1, 4, 10, 6, 2]), 7)
+    # is_correct(avoid_obstacles([1000, 999]), 6)
+    # is_correct(avoid_obstacles([19, 32, 11, 23]), 3)
+    # is_correct(avoid_obstacles([5, 8, 9, 13, 14]), 6)
