@@ -52,8 +52,8 @@ def compare_lists(a, b):
 if __name__ == '__main__':
     # print(compare_lists([1, 2, 3], [1, 4, 5]))
     is_correct(avoid_obstacles([5, 3, 6, 7, 9]), 4)
-    # is_correct(avoid_obstacles([2, 3]), 4)
-    # is_correct(avoid_obstacles([1, 4, 10, 6, 2]), 7)
-    # is_correct(avoid_obstacles([1000, 999]), 6)
-    # is_correct(avoid_obstacles([19, 32, 11, 23]), 3)
-    # is_correct(avoid_obstacles([5, 8, 9, 13, 14]), 6)
+    is_correct(avoid_obstacles([2, 3]), 4)
+    is_correct(avoid_obstacles([1, 4, 10, 6, 2]), 7)
+    is_correct(avoid_obstacles([1000, 999]), 6)
+    is_correct(avoid_obstacles([19, 32, 11, 23]), 3)
+    is_correct(avoid_obstacles([5, 8, 9, 13, 14]), 6)
