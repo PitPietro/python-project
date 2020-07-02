@@ -1,8 +1,5 @@
 def get_factorial_recursive(num):
-    if num == 0:
-        return 1
-    else:
-        return num * get_factorial_recursive(num - 1)
+    return num * get_factorial_recursive(num - 1) if num else 1
 
 
 class Factorial:
@@ -15,13 +12,9 @@ class Factorial:
     def get_factorial_iterative(self) -> int:
         result = 1
 
-        for i in range(self.n):
-            if i == 0 or i == 1:
-                result *= 1
-            else:
-                result *= i
+        for i in range(self.n + 1):
+            result *= max(1, i)
 
-        result *= self.n
         return result
 
 
