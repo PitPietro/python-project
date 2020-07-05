@@ -6,7 +6,7 @@ def newton_formula(a: int, b: int, n: int, k: int) -> str:
     binomial = binomial_coefficient_int(n, k)
 
     s = "({} + {})^{} = {} * {} * {}^{} {}^{}"
-    return s.format(a, b, n, summation, binomial, a, n-k, b, k)
+    return s.format(a, b, n, summation, binomial, a, n - k, b, k)
 
 
 if __name__ == '__main__':
