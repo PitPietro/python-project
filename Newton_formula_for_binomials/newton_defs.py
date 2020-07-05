@@ -2,18 +2,11 @@ from binomial_coefficient.binomial_coefficient_defs import binomial_coefficient_
 
 
 def newton_formula(a: int, b: int, n: int, k: int) -> str:
-    sum = summation(n)
+    summation = n * (n + 1) // 2
     binomial = binomial_coefficient_int(n, k)
 
     s = "({} + {})^{} = {} * {} * {}^{} {}^{}"
-    return s.format(a, b, n, sum, binomial, a, n-k, b, k)
-
-
-def summation(n: int) -> int:
-    k = 0
-    for x in range(n+1):
-        k += x
-    return k
+    return s.format(a, b, n, summation, binomial, a, n-k, b, k)
 
 
 if __name__ == '__main__':
