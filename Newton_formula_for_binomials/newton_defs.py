@@ -10,5 +10,11 @@ def newton_formula(a: int, b: int, n: int, k: int) -> str:
 
 
 if __name__ == '__main__':
-    print(summation(3))
     print(newton_formula(3, 4, 5, 4))
+
+
+# def summation(n: int) -> int:
+#     k = 0
+#     for x in range(n+1):
+#         k += x
+#     return k
