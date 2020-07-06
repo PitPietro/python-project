@@ -1,5 +1,7 @@
 # Pascal Triangle
-Math library to start programming in Python and apply it to math problems.
+![GitHub repo size](https://img.shields.io/github/repo-size/PitPietro/pascal-triangle)
+![GitHub](https://img.shields.io/github/license/PitPietro/pascal-triangle)
+<br>Math library to start programming in Python and apply it to math problems.
 ## Table of Contents
 - [Project working](#project-working)
   - [Avoid errors](#avoid-errors)
@@ -36,10 +38,11 @@ maintained by the interpreter and to functions that interact strongly with the i
 [TODO]
 
 ## Prerequisites
-Install [PyCharm](https://www.jetbrains.com/pycharm/download/) or another IDE.
+Install [PyCharm](https://www.jetbrains.com/pycharm/download/) or another Python IDE.
 
 ## Installing
-Clone the repository on your computer and test yourself the library.<br>
+Clone the repository on your computer and test yourself the library:
+<br>`git clone https://github.com/PitPietro/pascal-triangle.git`
 
 
 ## Versioning
