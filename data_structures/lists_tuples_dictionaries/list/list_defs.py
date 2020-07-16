@@ -1,3 +1,5 @@
+import os
+
 from data_structures.stacks_queues.stack import Stack
 
 star_wars_movies = ["Episode I - The Phantom Menace",
@@ -55,6 +57,18 @@ def list_insert(my_list: list):
     my_list.insert(user_n, user_input)
     print(my_list)
     return my_list
+
+
+def del_element(my_list, index):
+    print(my_list)
+    del my_list[index]
+    print(my_list)
+
+
+def remove_element(my_list, element):
+    print(my_list)
+    my_list.remove(element)
+    print(my_list)
 
 
 def list_sum(my_list: list):
@@ -210,24 +224,42 @@ def reverse_list(my_list):
 
 
 if __name__ == '__main__':
+    div = ' _______________________________________ '
     main_artist = list_declaration_1("Aladino")
     list_append(['abc', 'how', 'lol'])
+    print(div)
     list_insert(['cat', 'dog', 'lion'])
+    print(div)
+    numbers = [1, 2, 3, 4]
+    del_element(numbers, 1)
+    print(div)
+    remove_element(numbers, 4)
+    print(div)
     s_list = list_sum(main_artist)
+    print(div)
     list_change_element(s_list, 4)
-    print("\n")
+    print(div)
     print(combine_two_lists(star_wars_movies, rating_movies))
+    print(div)
     my_s = "You 2 are good to be 43."
     print(string_to_list(my_s))
+    print(div)
     print(string_to_list_only_digit(my_s))
+    print(div)
     print(string_to_list_only_last_digit(my_s))
+    print(div)
     my_n = [1, 7, 5, 3, 2]
     print(multiply_list(7, my_n))
+    print(div)
     my_n2 = [1, 4, 3, 8]
     print(list_intersection(my_n, my_n2))
+    print(div)
     print(set_intersection(my_n, my_n2))
+    print(div)
     # find_the_single_element
     duplicates_list = [1, 2, 3, 2, 3, 1, 4]
     print(find_the_single_element(duplicates_list))
+    print(div)
     print(find_the_single_element_with_dict(duplicates_list))
+    print(div)
     print(reverse_list(my_n2))
