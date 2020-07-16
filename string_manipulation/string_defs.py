@@ -1,8 +1,8 @@
 import random
 import time
 
-from python_structure.data_structures.stacks_queues.stack import Stack
-from python_structure.data_structures.stacks_queues.queue import Queue
+from data_structures.stacks_queues import Stack
+from data_structures.stacks_queues import Queue
 
 
 def negative_index():

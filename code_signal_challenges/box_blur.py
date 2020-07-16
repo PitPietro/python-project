@@ -45,7 +45,7 @@ An image, stored as a rectangular matrix of non-negative integers.
 A blurred image represented as integers, obtained through the process in the description.
 
 """
-from python_structure.code_signal_challenges.result_is_correct import is_correct
+from code_signal_challenges.result_is_correct import is_correct
 
 
 def box_blur(image):

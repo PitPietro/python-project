@@ -1,4 +1,4 @@
-from python_structure.data_structures.stacks_queues.stack import Stack
+from data_structures.stacks_queues import Stack
 """
 > Task
 Write a function that reverses characters in (possibly nested) parentheses in the input string.

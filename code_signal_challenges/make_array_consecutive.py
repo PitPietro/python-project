@@ -21,7 +21,7 @@ An array of distinct non-negative integers.
 The minimal number of statues that need to be added to existing statues such that it contains every integer
 size from an interval [L, R] (for some L, R) and no other sizes.
 """
-from python_structure.algorithms.sorting_algorithms.bubble_sort import bubble_sort
+from algorithms.sorting_algorithms.bubble_sort import bubble_sort
 
 
 def make_array_consecutive(int_list):

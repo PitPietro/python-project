@@ -15,7 +15,7 @@ A string consisting of lowercase English letters.
 - output: boolean
 true if the characters of the inputString can be rearranged to form a palindrome, false otherwise.36
 """
-from python_structure.code_signal_challenges.check_palindrome import check_palindrome
+from code_signal_challenges.check_palindrome import check_palindrome
 from collections import deque, Counter
 
 

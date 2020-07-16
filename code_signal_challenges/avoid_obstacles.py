@@ -19,7 +19,7 @@ Non-empty array of positive integers.
 - output: integer
 The desired length.
 """
-from python_structure.code_signal_challenges.result_is_correct import is_correct
+from code_signal_challenges.result_is_correct import is_correct
 
 
 def avoid_obstacles(i_list):

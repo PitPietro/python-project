@@ -15,7 +15,7 @@ Array of three integers representing triangle sides.
 - output: boolean
 true if the triangle with sides from the sides array is a right triangle, false otherwise.
 """
-from python_structure.code_signal_challenges.result_is_correct import is_correct
+from code_signal_challenges.result_is_correct import is_correct
 
 
 def right_triangle(sides):

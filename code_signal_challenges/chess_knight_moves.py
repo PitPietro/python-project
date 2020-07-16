@@ -21,7 +21,7 @@ cell.length = 2,
 1 ≤ cell[1] ≤ 8.
 - output: integer
 """
-from python_structure.code_signal_challenges.result_is_correct import is_correct
+from code_signal_challenges.result_is_correct import is_correct
 
 
 def chess_knight_moves(cell):

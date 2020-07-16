@@ -22,7 +22,7 @@ A string consisting of digits, full stops and lowercase English letters.
 - output: boolean
 true if inputString satisfies the IPv4 address naming rules, false otherwise.
 """
-from python_structure.code_signal_challenges.result_is_correct import is_correct
+from code_signal_challenges.result_is_correct import is_correct
 import time
 import ipaddress
 

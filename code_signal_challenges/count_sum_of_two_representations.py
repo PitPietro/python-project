@@ -17,7 +17,7 @@ Positive integers.
 l ≤ r ≤ 20.
 - output: integer
 """
-from python_structure.code_signal_challenges.result_is_correct import is_correct
+from code_signal_challenges.result_is_correct import is_correct
 
 
 def count_sum_of_two_representations(n, left, right):

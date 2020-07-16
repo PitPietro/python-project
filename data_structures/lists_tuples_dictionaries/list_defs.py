@@ -1,4 +1,4 @@
-from python_structure.data_structures.stacks_queues.stack import Stack
+from data_structures.stacks_queues import Stack
 
 star_wars_movies = ["Episode I - The Phantom Menace",
                     "Episode II – Attack of the Clones",
