@@ -1,7 +1,7 @@
-# Pascal Triangle
+# Python structure
 ![GitHub repo size](https://img.shields.io/github/repo-size/PitPietro/pascal-triangle)
 ![GitHub](https://img.shields.io/github/license/PitPietro/pascal-triangle)
-<br>Math library to start programming in Python and apply it to math problems.
+<br>It sould hae been a math library to start programming in Python and apply it to math problems, but it started testing all the stuff I was learning in Python, so it is my starting point in this language.
 ## Table of Contents
 - [Project working](#project-working)
   - [Avoid errors](#avoid-errors)
