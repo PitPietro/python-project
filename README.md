@@ -42,13 +42,13 @@ Install [PyCharm](https://www.jetbrains.com/pycharm/download/) or another Python
 
 ## Installing
 Clone the repository on your computer and test yourself the library:
-<br>`git clone https://github.com/PitPietro/pascal-triangle.git`
+<br>`git clone https://github.com/PitPietro/python-structure.git`
 
 
 ## Versioning
-For the versions available, see the [tags on this repository](https://github.com/PitPietro/pascal-triangle/tags).
+For the versions available, see the [tags on this repository](https://github.com/PitPietro/python-structure/tags).
 
 
 ## Author
 **Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)
-<br>See also the list of [contributors](https://github.com/PitPietro/pascal-triangle/contributors) who participated in this project.
+<br>See also the list of [contributors](https://github.com/PitPietro/python-structure/contributors) who participated in this project.
