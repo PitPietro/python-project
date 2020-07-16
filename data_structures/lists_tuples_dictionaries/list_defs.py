@@ -1,4 +1,4 @@
-from data_structures.stacks_queues import Stack
+from data_structures.stacks_queues.stack import Stack
 
 star_wars_movies = ["Episode I - The Phantom Menace",
                     "Episode II – Attack of the Clones",
@@ -41,8 +41,18 @@ def list_declaration_1(a="Mozart", b=1.2):
 
 
 def list_append(my_list: list):
+    print(my_list)
     user_input = input("Item to append to the list: ")
     my_list.append(user_input)
+    print(my_list)
+    return my_list
+
+
+def list_insert(my_list: list):
+    print(my_list)
+    user_input = input("Item to insert to the list: ")
+    user_n = int(input("Index where the element will be inserted: "))
+    my_list.insert(user_n, user_input)
     print(my_list)
     return my_list
 
@@ -201,7 +211,8 @@ def reverse_list(my_list):
 
 if __name__ == '__main__':
     main_artist = list_declaration_1("Aladino")
-    # list_append(main_artist)
+    list_append(['abc', 'how', 'lol'])
+    list_insert(['cat', 'dog', 'lion'])
     s_list = list_sum(main_artist)
     list_change_element(s_list, 4)
     print("\n")
