@@ -1,3 +1,5 @@
+import random
+
 import matplotlib.pyplot as plt
 
 
@@ -40,10 +42,52 @@ def pie_2_autopct():
     plt.show()
 
 
+def pie_3_legend():
+    """
+    |-- Location String --|-- Location Code --|
+    |---------------------|-------------------|
+    |-- 'best' 	        --|--       0       --|
+    |-- 'upper right'   --|--    	1       --|
+    |-- 'upper left' 	--|--       2       --|
+    |-- 'lower left' 	--|--       3       --|
+    |-- 'lower right' 	--|--       4       --|
+    |-- 'right' 	    --|--       5       --|
+    |-- 'center left' 	--|--       6       --|
+    |-- 'center right' 	--|--       7       --|
+    |-- 'lower center' 	--|--       8       --|
+    |-- 'upper center' 	--|--       9       --|
+    |-- 'center' 	    --|--      10       --|
+    |-----------------------------------------|
+    :return: 3rd plot
+    """
+    plt.pie(
+        my_dict.values(),
+        labels=my_dict.keys(),
+        autopct='%0.2f%%'
+    )
+    loc_dict = {'best': 0,
+                'upper right': 1,
+                'upper left': 2,
+                'lower left': 3,
+                'lower right': 4,
+                'right': 5,
+                'center left': 6,
+                'center right': 7,
+                'lower center': 8,
+                'upper center': 9,
+                'center': 10}
+    random_legend = random.choice(list(loc_dict.values()))
+    print('Legend position: ', list(loc_dict.keys())[list(loc_dict.values()).index(random_legend)])
+    plt.legend(my_dict.keys(), loc=random_legend)
+    plt.show()
+
+
 if __name__ == '__main__':
-    s = 2
+    s = 3
     # int(input('Which Chart do you want to see? '))
     if s == 1:
         pie_1()
     elif s == 2:
         pie_2_autopct()
+    elif s == 3:
+        pie_3_legend()
