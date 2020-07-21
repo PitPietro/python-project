@@ -22,10 +22,17 @@ def find_usa_phone_with_groups():
     return my_list
 
 
-def parenthesis_number():
+def eu_prefix_number():
     msg = 'Call me at (+39) 111 00 44 230'
     # \( means we're looking for a parenthesis, it is not the start of a group
     phone_regex = re.compile(r'\(\+\d\d\)\s\d\d\d \d\d \d\d \d\d\d')
+    result = phone_regex.search(msg)
+    print(result.group())
+
+
+def optional_eu_prefix_number():
+    msg = 'Call me at (+51) 111 00 44 230'
+    phone_regex = re.compile(r'(\(\+\d\d\)\s)?\d\d\d \d\d \d\d \d\d\d')
     result = phone_regex.search(msg)
     print(result.group())
 
@@ -34,4 +41,5 @@ if __name__ == '__main__':
     print(find_usa_phone())
     num_list = find_usa_phone_with_groups()
     print('{} --> area group: {} -- number: {}'.format(num_list[0], num_list[1], num_list[2]))
-    parenthesis_number()
+    eu_prefix_number()
+    optional_eu_prefix_number()

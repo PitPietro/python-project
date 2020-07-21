@@ -109,7 +109,7 @@ def non_greedy_match_question_mark(word):
     :param word:
     :return:
     """
-    return re.findall("_.*?_", word)
+    return re.findall('_.*?_', word)
 
 
 def mad_libs(mls):
@@ -136,6 +136,48 @@ def mad_libs(mls):
         print("invalid mls")
 
 
+def zero_or_one_time():
+    my_regex = re.compile(r'Bat(wo)?man')
+    msg = 'The life of Batwoman'
+    result = my_regex.search(msg)
+    return return_result(result)
+
+
+def zero_or_more():
+    my_regex = re.compile(r'Bat(wo)*man')
+    msg = 'The life of Batwowowoman'
+    result = my_regex.search(msg)
+    return return_result(result)
+
+
+def one_or_more():
+    my_regex = re.compile(r'Bat(wo)+man')
+    msg = 'The life of Batman'
+    result = my_regex.search(msg)
+    return return_result(result)
+
+
+def return_result(result):
+    if result is None:
+        return 'Did not find any match'
+    else:
+        return result.group()
+
+
+def find_repetition(msg, word, num):
+    # re.compile(r'(word){num}')
+    regex = re.compile(r'(' + word + '){' + str(num) + '}')
+    result = regex.search(msg)
+    return return_result(result)
+
+
+def find_repetition_range(msg, word, num_min, num_max):
+    # re.compile(r'(word){min, max}')
+    regex = re.compile(r'(' + word + '){' + str(num_min) + ',' + str(num_max) + '}')
+    result = regex.search(msg)
+    return return_result(result)
+
+
 if __name__ == '__main__':
     print(one_word_in_a_line("Pit", "I'm working whit Pit"))
     print(one_word_in_a_line_ignore_case("Pit", "Pit is digging a pit"))
@@ -146,4 +188,9 @@ if __name__ == '__main__':
     print(find_digit("Arizona 479, 501, 870. California 209, 213, 650."))
     print(non_greedy_match(underscores_words))
     print(non_greedy_match_question_mark(underscores_words))
+    print(zero_or_one_time())
+    print(zero_or_more())
+    print(one_or_more())
+    print(find_repetition('I\'m Santa Claus OhOhOh', 'Oh', 3))
+    print(find_repetition_range('You make me sing: LaLaLaLa', 'La', 3, 6))
     mad_libs(text)
