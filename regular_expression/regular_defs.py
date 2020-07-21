@@ -65,6 +65,12 @@ def start_with(word, line):
     return re.findall(word, line)
 
 
+def pipe_search():
+    start_regex = re.compile(r'Bat(mobile|copter|bat)')
+    result = start_regex.search('I am on a Batmobile')
+    return result.group()
+
+
 def start_with_multiline(word, line):
     word = "^" + word
     return re.findall(word, line, re.MULTILINE)
@@ -81,7 +87,7 @@ def find_digit(line):
     :param line:
     :return:
     """
-    return re.findall("\d", line, re.IGNORECASE)
+    return re.findall('\d', line, re.IGNORECASE)
 
 
 def non_greedy_match(word):
@@ -134,6 +140,7 @@ if __name__ == '__main__':
     print(one_word_in_a_line("Pit", "I'm working whit Pit"))
     print(one_word_in_a_line_ignore_case("Pit", "Pit is digging a pit"))
     print(start_with("Are", "Are you kidding me?"))
+    print(pipe_search())
     print(start_with_multiline("If", zen))
     print(end_with("funny!", "Sometimes you are funny!"))
     print(find_digit("Arizona 479, 501, 870. California 209, 213, 650."))
