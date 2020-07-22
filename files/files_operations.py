@@ -11,7 +11,8 @@ def file_open():
     :return:
     """
     with open("p.txt", "w+") as my_file:
-        my_file.write("Hi Python!")
+        msg = input('Insert the file content: ')
+        my_file.write(msg)
 
 
 def file_read():
@@ -25,13 +26,8 @@ def file_read():
     print(content)
 
 
-def error_callback(update, context):
-   LOGGER.exception('This is custom errors: "%s"', update, context.error)
-   raise context.error
-
-dispatcher.add_error_handler(error_callback)
-
-
 if __name__ == '__main__':
+    print('Open a file and write something inside')
     file_open()
+    print('Read the content of that file')
     file_read()
