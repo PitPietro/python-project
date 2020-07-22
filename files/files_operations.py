@@ -13,6 +13,7 @@ def file_open():
     with open("p.txt", "w+") as my_file:
         msg = input('Insert the file content: ')
         my_file.write(msg)
+        my_file.close()
 
 
 def file_read():
@@ -23,6 +24,7 @@ def file_read():
     """
     with open("p.txt", "r") as my_file:
         content = my_file.read()
+        my_file.close()
     return content
 
 
@@ -33,7 +35,8 @@ def read_file_by_line():
 
 
 if __name__ == '__main__':
-    print('Open a file and write something inside:\n')
+    print('Please Note: Press Shift + Enter to write in a new line.\n'
+          'Open a file and write something inside:\n')
     file_open()
     print('Read the content of that file:\n')
     print(file_read())
