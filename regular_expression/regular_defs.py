@@ -83,14 +83,14 @@ def end_with(word, line):
 
 def find_digit(line):
     """
-    The '\d' search for the digit in 'line'
+    The d search for the digit in 'line'
     :param line:
     :return:
     """
     return re.findall('\d', line, re.IGNORECASE)
 
 
-def non_greedy_match(word):
+def greedy_match(word):
     """
     The period matches any character, so this regular expression
     matches any character between the underscores. To match as much
@@ -178,6 +178,26 @@ def find_repetition_range(msg, word, num_min, num_max):
     return return_result(result)
 
 
+def only_digit():
+    # the entire string must begin and end with digits only (no chars no spaces, nothing else)
+    regex = re.compile(r'^\d+$')
+    return return_result(regex.search('423431432'))
+
+
+def any_chars():
+    # the dot is looking for a single char --> re.compile(r'.@')
+    regex = re.compile(r'.{1,3}@')
+    msg = 'My emails are: pit@github.com and bob@gmail.com'
+    return regex.findall(msg)
+
+
+def any_names():
+    regex = re.compile(r'First Name: (.*)\n Last Name: (.*)')
+    # msg = 'First Name: {}\n Last Name: {}'.format(input('Name: '), input('Last name: '))
+    msg = 'First Name: Pit\n Last Name: Pietro'
+    return regex.findall(msg)
+
+
 if __name__ == '__main__':
     print(one_word_in_a_line("Pit", "I'm working whit Pit"))
     print(one_word_in_a_line_ignore_case("Pit", "Pit is digging a pit"))
@@ -186,11 +206,14 @@ if __name__ == '__main__':
     print(start_with_multiline("If", zen))
     print(end_with("funny!", "Sometimes you are funny!"))
     print(find_digit("Arizona 479, 501, 870. California 209, 213, 650."))
-    print(non_greedy_match(underscores_words))
+    print(greedy_match(underscores_words))
     print(non_greedy_match_question_mark(underscores_words))
     print(zero_or_one_time())
     print(zero_or_more())
     print(one_or_more())
     print(find_repetition('I\'m Santa Claus OhOhOh', 'Oh', 3))
     print(find_repetition_range('You make me sing: LaLaLaLa', 'La', 3, 6))
+    print(only_digit())
+    print(any_chars())
+    print(any_names())
     mad_libs(text)
