@@ -23,11 +23,20 @@ def file_read():
     """
     with open("p.txt", "r") as my_file:
         content = my_file.read()
-    print(content)
+    return content
+
+
+def read_file_by_line():
+    with open('p.txt', 'r') as my_file:
+        text_lines = my_file.readlines()
+    return text_lines
 
 
 if __name__ == '__main__':
-    print('Open a file and write something inside')
+    print('Open a file and write something inside:\n')
     file_open()
-    print('Read the content of that file')
-    file_read()
+    print('Read the content of that file:\n')
+    print(file_read())
+    print('|-------------------')
+    print(read_file_by_line())
+    exit(0)
