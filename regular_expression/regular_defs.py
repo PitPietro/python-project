@@ -198,6 +198,20 @@ def any_names():
     return regex.findall(msg)
 
 
+def replace_names():
+    msg = 'Mr Banker gave my a letter for Mr Laurence.'
+    regex = re.compile(r'Mr \w+')
+    print(regex.findall(msg))
+    return regex.sub('AGENT X', msg)
+
+
+def replace_names_with_first_letter():
+    msg = 'Mr Banker asks me to find Mr Laurence.'
+    regex = re.compile(r'Mr (\w)\w*')
+    # \1 means: search in the 1st group of the regex
+    return regex.sub(r'AGENT \1', msg)
+
+
 if __name__ == '__main__':
     print(one_word_in_a_line("Pit", "I'm working whit Pit"))
     print(one_word_in_a_line_ignore_case("Pit", "Pit is digging a pit"))
@@ -216,4 +230,6 @@ if __name__ == '__main__':
     print(only_digit())
     print(any_chars())
     print(any_names())
+    print(replace_names())
+    print(replace_names_with_first_letter())
     mad_libs(text)
