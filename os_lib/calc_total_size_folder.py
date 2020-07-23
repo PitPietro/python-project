@@ -19,13 +19,14 @@ def get_total_size_folder(full_path='/'):
 
 def handle_user_input():
     try:
-        result = get_total_size_folder(input('Insert the full path: '))
-        print(result)
+        result = input('Insert the full path: ')
+        return result
     except FileNotFoundError:
         print('ERROR: The path does not exists')
 
 
-handle_user_input()
+usr_input = handle_user_input()
+print(get_total_size_folder(usr_input))
 
 
 '''
