@@ -1,6 +1,7 @@
 #!/usr/bin/python3.8
 
 import os
+import time
 
 
 # def set_dir(path):
@@ -8,10 +9,24 @@ import os
 
 
 def show_tree(path):
-    for folder_name, sub_folders, file_names in os.walk(path):
-        print('folder: ', folder_name)
-        print('Sub-folders in {} are {}'.format(folder_name, str(sub_folders)))
-        print('Files in {} are {}'.format(folder_name, str(file_names)))
+    start_time = time.time()
+    for root, directories, files in os.walk(path):
+        base_dir = os.path.basename(os.path.normpath(path))
+        print(base_dir)
+        # get the current folder level as default
+        level = root.replace(path, '').count(os.sep)
+        # set the indent size
+        indent = ' ' * 4 * level + '| '
+        # print a line of the tree
+        print('{}{}/'.format(indent, os.path.basename(root)))
+        # double the indent
+        sub_indent = ' ' * 4 * (level + 1) + '| '
+        # list all the files
+        for f in files:
+            print('{}{}'.format(sub_indent, f))
+
+    end_time = time.time() - start_time
+    print('\nThe tree has been performed in {} seconds.'.format(end_time))
 
 
 def handle_user_input():
@@ -23,4 +38,4 @@ def handle_user_input():
 
 
 usr_input = input('Choose a path: ')
-show_tree(usr_input)
+show_tree('/home/pit/Documents/script_folder/test-folder/')
