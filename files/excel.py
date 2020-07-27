@@ -1,4 +1,42 @@
 import openpyxl
+import os
+
+
+my_values = [
+    ['A1', 'A2', 'A3', 'A4', 'A5'],
+    ['B1', 'B2', 'B3', 'B4', 'B5'],
+    ['C1', 'C2', 'C3', 'C4', 'C5']
+]
+
+
+def create_workbook(name, values):
+    """
+    :param name: the name with which the file will be saved
+    :param values:
+    the values multidimensional-array must look like this
+    values = [
+        [ 'A1', 'A2', 'A3', 'A4', 'A5', ... ],
+        [ 'B1', 'B2', 'B3', 'B4', 'B5', ... ],
+        [ 'C1', 'C2', 'C3', 'C4', 'C5', ... ]
+    ]
+    :return: True is successfully saved
+    """
+    wb = openpyxl.Workbook()
+    for v_row in values:
+        for v_col in v_row:
+            print('row: {}\tcol = {}'.format(v_row, v_col), end=' ')
+        print()
+
+    print('|Numeric single range values')
+    for i in values:
+        for j in range(len(i)):
+            print('val[{}] = {}'.format(j, i[j]))
+        print()
+    print('|Numeric range values')
+    for n_row in range(len(values)):
+        print('val[{}] = {}'.format(n_row, values[n_row]))
+        for n_col in range(len(values[n_row])):
+            print('val[{}][{}] = {}'.format(n_row, n_col, values[n_row][n_col]))
 
 
 def get_workbook(file_path):
@@ -30,7 +68,7 @@ def get_cells(file_path, s_name, row, column):
     sheet = get_sheet(file_path, s_name)
     for i in range(1, column + 1):
         for j in range(1, row + 1):
-            msg = '{}:\t{}'.format(j, sheet.cell(row=j, column=i).value)
+            msg = '{}-{}:\t{}'.format(i, j, sheet.cell(row=j, column=i).value)
             if j == 1:
                 print(msg.upper())
             else:
@@ -44,4 +82,5 @@ if __name__ == '__main__':
     print(get_sheets(ex_file))
     print(get_cell(ex_file, 'Sheet1', 'A1'))
     get_cells(ex_file, 'Sheet1', 4, 5)
+    create_workbook('test', my_values)
     exit(0)
