@@ -34,6 +34,9 @@ page about the topic.
 The [sys module](https://docs.python.org/3.6/library/sys.html) (Python 3.6) provides access to some variables used or
 maintained by the interpreter and to functions that interact strongly with the interpreter.
 
+### openpyxl
+Allow to work with Excel files.
+
 ## Discussion about this project
 [TODO]
 
