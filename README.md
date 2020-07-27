@@ -35,7 +35,12 @@ The [sys module](https://docs.python.org/3.6/library/sys.html) (Python 3.6) prov
 maintained by the interpreter and to functions that interact strongly with the interpreter.
 
 ### openpyxl
-Allow to work with Excel files.
+Allow to work with Excel files.<br>
+`pip install openpyxl`
+
+### PyPDF2
+Allow to work with PDFs. It can only extract text.<br>
+` pip install pypdf2`
 
 ## Discussion about this project
 [TODO]
