@@ -45,6 +45,12 @@ def create_workbook(name, values):
     wb.save(filename=name)
 
 
+def create_new_sheet(file_path, new_sheet_name, new_s_index=None):
+    wb = get_workbook(file_path)
+    new_sheet = wb.create_sheet(new_sheet_name, new_s_index)
+    return new_sheet.title
+
+
 def get_workbook(file_path):
     return openpyxl.load_workbook(file_path)
 
