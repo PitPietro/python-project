@@ -22,21 +22,27 @@ def create_workbook(name, values):
     :return: True is successfully saved
     """
     wb = openpyxl.Workbook()
-    for v_row in values:
-        for v_col in v_row:
-            print('row: {}\tcol = {}'.format(v_row, v_col), end=' ')
-        print()
+    # for v_row in values:
+    #     for v_col in v_row:
+    #         print('row: {}\tcol = {}'.format(v_row, v_col), end=' ')
+    #     print()
+    #
+    # print('|Numeric single range values')
+    # for i in values:
+    #     for j in range(len(i)):
+    #         print('val[{}] = {}'.format(j, i[j]))
+    #     print()
+    # print('|Numeric range values')
 
-    print('|Numeric single range values')
-    for i in values:
-        for j in range(len(i)):
-            print('val[{}] = {}'.format(j, i[j]))
-        print()
-    print('|Numeric range values')
+    sheet = wb['Sheet']
     for n_row in range(len(values)):
         print('val[{}] = {}'.format(n_row, values[n_row]))
         for n_col in range(len(values[n_row])):
-            print('val[{}][{}] = {}'.format(n_row, n_col, values[n_row][n_col]))
+            sheet.cell(row=n_col+1, column=n_row+1).value = values[n_row][n_col]
+            print('val[{}][{}] = {}'.format(n_row, n_col, sheet.cell(row=n_row+1, column=n_col+1).value))
+
+    os.chdir('/home/pit/Documents/python_projects/python-structure/files/')
+    wb.save(filename=name)
 
 
 def get_workbook(file_path):
@@ -82,5 +88,5 @@ if __name__ == '__main__':
     print(get_sheets(ex_file))
     print(get_cell(ex_file, 'Sheet1', 'A1'))
     get_cells(ex_file, 'Sheet1', 4, 5)
-    create_workbook('test', my_values)
+    create_workbook('test.xlsx', my_values)
     exit(0)
