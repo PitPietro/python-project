@@ -40,7 +40,11 @@ Allow to work with Excel files.<br>
 
 ### PyPDF2
 Allow to work with PDFs. It can only extract text.<br>
-` pip install pypdf2`
+`pip install pypdf2`
+
+### Word Documents
+Allow to work with .docx files.<br>
+`pip install python-docx`
 
 ## Discussion about this project
 [TODO]
