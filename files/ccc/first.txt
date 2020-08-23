@@ -1,0 +1,2 @@
+I am the first file
+Pipe is the connection between the output of a command into the input of another command.
