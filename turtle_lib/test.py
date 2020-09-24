@@ -14,6 +14,8 @@ def test():
         print('i = {}°\ta = {}°\tx = {} y = {}'.format(i, angle, x_value, y_value))
         time.sleep(0.001)
 
+    while True:
+        print('change x and y position according to the current position')
     # pen.down()
     # pen.goto(0.5, 0.5)
     # pen.forward(100)
