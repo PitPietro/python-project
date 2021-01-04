@@ -60,7 +60,7 @@ pip install python-docx
 ## Prerequisites
 Install [PyCharm](https://www.jetbrains.com/pycharm/download/) or another Python IDE.
 
-## Install
+## Installing
 Clone the repository on your computer and test yourself the library:
 ```bash
 git clone https://github.com/PitPietro/python-structure.git
