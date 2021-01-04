@@ -1,7 +1,9 @@
 # Python structure
 ![GitHub repo size](https://img.shields.io/github/repo-size/PitPietro/pascal-triangle)
-![GitHub](https://img.shields.io/github/license/PitPietro/pascal-triangle)
-<br>It sould hae been a math library to start programming in Python and apply it to math problems, but it started testing all the stuff I was learning in Python, so it is my starting point in this language.
+![GitHub](https://img.shields.io/github/license/PitPietro/pascal-triangle)\
+
+It sould hae been a math library to start programming in Python and apply it to math problems, but it started testing all the stuff I was learning in Python, so it is my starting point in this language.
+
 ## Table of Contents
 - [Project working](#project-working)
   - [Avoid errors](#avoid-errors)
@@ -15,8 +17,11 @@
 - [Installing](#installing)
 - [Versioning](#versioning)
 - [Author](#author)
+
 ## Project working
+
 ### Avoid errors
+
 #### Recursive functions
 If the the compiler (or the user) try to call self <i>recursive function</i> passing as parameter self huge number, it will
 get self <code>RecursionError: maximum recursion depth exceeded in comparison</code> error because python stop calling
@@ -36,31 +41,39 @@ maintained by the interpreter and to functions that interact strongly with the i
 
 ### openpyxl
 Allow to work with Excel files.<br>
-`pip install openpyxl`
+```bash
+pip install openpyxl
+```
 
 ### PyPDF2
-Allow to work with PDFs. It can only extract text.<br>
-`pip install pypdf2`
+Allow to work with PDFs. It can only extract text.\
+```bash
+pip install pypdf2
+```
 
 ### Word Documents
-Allow to work with .docx files.<br>
-`pip install python-docx`
-
-## Discussion about this project
-[TODO]
+Allow to work with .docx files.\
+```bash
+pip install python-docx
+```
 
 ## Prerequisites
 Install [PyCharm](https://www.jetbrains.com/pycharm/download/) or another Python IDE.
 
-## Installing
-Clone the repository on your computer and test yourself the library:
-<br>`git clone https://github.com/PitPietro/python-structure.git`
+## Install
+Clone the repository on your computer and test yourself the library:\
+```bash
+git clone https://github.com/PitPietro/python-structure.git
+```
 
+Move to any directory and type:\
+```bash
+python [any-file].py
+```
 
 ## Versioning
 For the versions available, see the [tags on this repository](https://github.com/PitPietro/python-structure/tags).
 
-
 ## Author
-**Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)
-<br>See also the list of [contributors](https://github.com/PitPietro/python-structure/contributors) who participated in this project.
+**Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)\
+See also the list of [contributors](https://github.com/PitPietro/python-structure/contributors) who participated in this project.
