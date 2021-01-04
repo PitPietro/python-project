@@ -75,5 +75,5 @@ python [any-file].py
 For the versions available, see the [tags on this repository](https://github.com/PitPietro/python-structure/tags).
 
 ## Author
-**Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)
+**Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)\
 See also the list of [contributors](https://github.com/PitPietro/python-structure/contributors) who participated in this project.
