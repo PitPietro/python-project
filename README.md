@@ -1,6 +1,6 @@
 # Python structure
 ![GitHub repo size](https://img.shields.io/github/repo-size/PitPietro/pascal-triangle)
-![GitHub](https://img.shields.io/github/license/PitPietro/pascal-triangle)\
+![GitHub](https://img.shields.io/github/license/PitPietro/pascal-triangle)
 
 It sould hae been a math library to start programming in Python and apply it to math problems, but it started testing all the stuff I was learning in Python, so it is my starting point in this language.
 
@@ -46,13 +46,13 @@ pip install openpyxl
 ```
 
 ### PyPDF2
-Allow to work with PDFs. It can only extract text.\
+Allow to work with PDFs. It can only extract text.
 ```bash
 pip install pypdf2
 ```
 
 ### Word Documents
-Allow to work with .docx files.\
+Allow to work with .docx files.
 ```bash
 pip install python-docx
 ```
@@ -61,12 +61,12 @@ pip install python-docx
 Install [PyCharm](https://www.jetbrains.com/pycharm/download/) or another Python IDE.
 
 ## Install
-Clone the repository on your computer and test yourself the library:\
+Clone the repository on your computer and test yourself the library:
 ```bash
 git clone https://github.com/PitPietro/python-structure.git
 ```
 
-Move to any directory and type:\
+Move to any directory and type:
 ```bash
 python [any-file].py
 ```
@@ -75,5 +75,5 @@ python [any-file].py
 For the versions available, see the [tags on this repository](https://github.com/PitPietro/python-structure/tags).
 
 ## Author
-**Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)\
+**Pietro Poluzzi** - [PitPietro](https://github.com/PitPietro)
 See also the list of [contributors](https://github.com/PitPietro/python-structure/contributors) who participated in this project.
