@@ -4,16 +4,24 @@ import pyttsx3
 
 def speak(audio):
     engine.say(audio)
+    print(audio)
     engine.runAndWait()
 
 
-engine = pyttsx3.init()
-voices = engine.getProperty('voices')
-# slow down voice rate
-engine.setProperty('rate', 150)
+if __name__ == '__main__':
+    engine = pyttsx3.init()
+    voices = engine.getProperty('voices')
+    # slow down voice rate
+    engine.setProperty('rate', 150)
 
-for i in range(0, 5):
-    engine.setProperty('voice', voices[i].id)
-    speak("Voices test number " + str(i) + ". How are you?")
+    engine = pyttsx3.init()
+    for voice in voices:
+        # print(voice)
+        if voice.id == 'english':
+            print("voice: " + str(voice))
+            engine.setProperty('voice', voice.id)
+            break
+    speak("Hello World")
+
 
 
