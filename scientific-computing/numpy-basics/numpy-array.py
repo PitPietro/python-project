@@ -150,6 +150,36 @@ def zeros(n, m, numpy_type=np.float64):
     return np.zeros((n, m), dtype=numpy_type)
 
 
+def ones(n, m, numpy_type=np.float64):
+    """
+    Parameters
+    ----------
+    n number of dimensions
+    m number of elements for each dimension
+    numpy_type dtype
+
+    Returns
+    -------
+    Array full of ones
+    """
+    return np.ones((n, m), dtype=numpy_type)
+
+
+def empty(n, m, numpy_type=np.float64):
+    """
+    Parameters
+    ----------
+    n number of dimensions
+    m number of elements for each dimension
+    numpy_type dtype
+
+    Returns
+    -------
+    Array full of random values which depends on the state of the memory
+    """
+    return np.empty((n, m), dtype=numpy_type)
+
+
 if __name__ == '__main__':
     py_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     py_arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
@@ -164,5 +194,11 @@ if __name__ == '__main__':
     print('-------')
     print('zeros:\n' + str(zeros(2, 5, np.int16)))
     print('zeros:\n' + str(zeros(3, 4)))
+    print('-------')
+    print('ones:\n' + str(ones(2, 3, np.int16)))
+    print('ones:\n' + str(ones(4, 2)))
+    print('-------')
+    print('empty:\n' + str(empty(1, 4, np.int16)))
+    print('empty:\n' + str(empty(4, 3)))
 
 # https://numpy.org/doc/stable/user/quickstart.html
