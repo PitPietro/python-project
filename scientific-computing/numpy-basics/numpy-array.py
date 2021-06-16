@@ -129,6 +129,27 @@ def data(array):
     return np.array(array).data
 
 
+def zeros(n, m, numpy_type=np.float64):
+    """
+    Elements of an array are originally unknown, but its size could be known.
+    NumPy offers several functions to create arrays with initial placeholder
+    content, which minimize the necessity of growing arrays (an expensive operation).
+
+    By default, the dtype of the created array is float64.
+
+    Parameters
+    ----------
+    n number of dimensions
+    m number of elements for each dimension
+    numpy_type dtype
+
+    Returns
+    -------
+    Array full of zeros
+    """
+    return np.zeros((n, m), dtype=numpy_type)
+
+
 if __name__ == '__main__':
     py_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     py_arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
@@ -140,3 +161,8 @@ if __name__ == '__main__':
     print('dtype: ' + str(dtype(py_arrays)))
     print('item size: ' + str(item_size(py_arrays)))
     print('data: ' + str(data(py_arrays)))
+    print('-------')
+    print('zeros:\n' + str(zeros(2, 5, np.int16)))
+    print('zeros:\n' + str(zeros(3, 4)))
+
+# https://numpy.org/doc/stable/user/quickstart.html
