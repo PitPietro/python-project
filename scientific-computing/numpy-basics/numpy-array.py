@@ -31,7 +31,7 @@
 import numpy as np
 
 
-def init_np_array(array):
+def init_np_array(array, numpy_type=int) -> object:
     """
     Parameters
     ----------
@@ -41,7 +41,7 @@ def init_np_array(array):
     -------
     Create a NumPy array from a Python array
     """
-    return np.array(array)
+    return np.array(array, dtype=numpy_type)
 
 
 def number_of_axes(array):
@@ -180,10 +180,29 @@ def empty(n, m, numpy_type=np.float64):
     return np.empty((n, m), dtype=numpy_type)
 
 
+def range_of_elements(start, end, step, numpy_type=None):
+    """
+    NumPy provides the 'arange' function which is analogous to the Python built-in 'range', but returns an array.
+    Parameters
+    ----------
+    start start of the array
+    end end of the array
+    step value to increment for each element in the array
+    numpy_type type of the elements inside the array
+
+    Returns
+    -------
+    Sequences of numbers from 'start' to 'end', which are a summation of 'step'
+    """
+    return np.arange(start, end, step, dtype=numpy_type)
+
+
 if __name__ == '__main__':
+    complex_py_array = [-1, -2, -3, -4, -5]
     py_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     py_arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
     print('mono-dimensional array:\n' + str(init_np_array(py_array)))
+    print('\nmono-dimensional array (complex):\n{}'.format(str(init_np_array(complex_py_array, complex))))
     print('\nn-dimensional array:\n' + str(init_np_array(py_arrays)))
     print('number of axes: ' + str(number_of_axes(py_arrays)))
     print('shape: ' + str(shape(py_arrays)))
@@ -200,5 +219,7 @@ if __name__ == '__main__':
     print('-------')
     print('empty:\n' + str(empty(1, 4, np.int16)))
     print('empty:\n' + str(empty(4, 3)))
+    print('-------')
+    print('arange:\n' + str(range_of_elements(1, 4, 0.5)))
 
 # https://numpy.org/doc/stable/user/quickstart.html
