@@ -180,7 +180,7 @@ def empty(n, m, numpy_type=np.float64):
     return np.empty((n, m), dtype=numpy_type)
 
 
-def range_of_elements(start, end, step, numpy_type=None):
+def range_of_elements_given_step(start, end, step, numpy_type=None):
     """
     NumPy provides the 'arange' function which is analogous to the Python built-in 'range', but returns an array.
     Parameters
@@ -195,6 +195,25 @@ def range_of_elements(start, end, step, numpy_type=None):
     Sequences of numbers from 'start' to 'end', which are a summation of 'step'
     """
     return np.arange(start, end, step, dtype=numpy_type)
+
+
+def range_of_elements_given_number(start, end, number, numpy_type=None):
+    """
+    Since is usually not possible to predict the number of elements obtained with
+    'arange' function, due to the finite floating point precision, it is usually
+    better to use 'linspace' function that receives as an argument the number of elements that we want, instead of the step:
+    Parameters
+    ----------
+    start start of the array
+    end end of the array
+    number number of elements to insert in the NumPy array
+    numpy_type type of the elements inside the array
+
+    Returns
+    -------
+    Sequences of 'number' numbers from 'start' to 'end'
+    """
+    return np.linspace(start, end, number, dtype=numpy_type)
 
 
 if __name__ == '__main__':
@@ -220,6 +239,7 @@ if __name__ == '__main__':
     print('empty:\n' + str(empty(1, 4, np.int16)))
     print('empty:\n' + str(empty(4, 3)))
     print('-------')
-    print('arange:\n' + str(range_of_elements(1, 4, 0.5)))
+    print('arange:\n' + str(range_of_elements_given_step(1, 4, 0.5)))
+    print('linspace:\n' + str(range_of_elements_given_number(1, 8, 5)))
 
 # https://numpy.org/doc/stable/user/quickstart.html
