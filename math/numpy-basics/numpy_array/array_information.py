@@ -95,3 +95,6 @@ if __name__ == '__main__':
     print('dtype: ' + str(dtype(py_arrays)))
     print('item size: ' + str(item_size(py_arrays)))
     print('data: ' + str(data(py_arrays)))
+
+
+# switch-case: https://www.simplifiedpython.net/python-switch-case-statement/
