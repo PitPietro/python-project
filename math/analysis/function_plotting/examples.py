@@ -25,13 +25,17 @@ def fill_ordinate_axis(start, end, number, numpy_type=None):
     print("x values:\n" + str(f_x))
     print("y value:\n" + str(f_y))
 
+    for i in f_x:
+        f_y[0].append(f(i, 0.5, 2, 5))
+    print("y value:\n" + str(f_y))
+
 
 if __name__ == '__main__':
     main_f_x = np.linspace(-20, 20, 500)
     main_f_y = []
 
-    for i in main_f_x:
-        main_f_y.append(f(i, 0.5, 2, 5))
+    for main_i in main_f_x:
+        main_f_y.append(f(main_i, 0.5, 2, 5))
 
     plt.figure(1)
     plt.plot(main_f_x, main_f_y)

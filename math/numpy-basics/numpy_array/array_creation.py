@@ -30,6 +30,10 @@
 
 import numpy as np
 
+complex_py_array = [-1, -2, -3, -4, -5]
+py_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+py_arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+
 
 def init_np_array(array, numpy_type=int) -> object:
     """
@@ -39,94 +43,10 @@ def init_np_array(array, numpy_type=int) -> object:
 
     Returns
     -------
+    object
     Create a NumPy array from a Python array
     """
     return np.array(array, dtype=numpy_type)
-
-
-def number_of_axes(array):
-    """
-    Parameters
-    ----------
-    array Python array
-
-    Returns
-    -------
-    Number of axes (dimensions) of the array.
-    """
-    return np.array(array).ndim
-
-
-def shape(array):
-    """
-    The dimension of the array is a tuple of integers indicating the size of the array in each dimension.
-    For a matrix with n rows and m columns, shape will be (n,m).
-    The length of the shape tuple is therefore the number of axes, ndim.
-    Parameters
-    ----------
-    array Python array
-
-    Returns
-    -------
-    Dimensions of the array.
-    """
-    return np.array(array).shape
-
-
-def size(array):
-    """
-    Parameters
-    ----------
-    array Python array Python array
-
-    Returns
-    -------
-    Total number of elements of the array. It is equal to the product of the elements of shape.
-    """
-    return np.array(array).size
-
-
-def dtype(array):
-    """
-    One can create or specify dtype's using standard Python types.
-    NumPy provides types of its own. numpy.int32, numpy.int16, and numpy.float64 are some examples.
-    Parameters
-    ----------
-    array Python array
-
-    Returns
-    -------
-    Object describing the type of the elements in the array.
-    """
-    return np.array(array).dtype
-
-
-def item_size(array):
-    """
-
-    Parameters
-    ----------
-    array Python array
-
-    Returns
-    -------
-    Size in bytes of each element of the array.
-    """
-    return np.array(array).itemsize
-
-
-def data(array):
-    """
-    Parameters
-    ----------
-    array Python array
-
-    Returns
-    -------
-    The buffer containing the actual elements of the array.
-    You do not usually need to use this attribute: you will access the elements in an array using indexing facilities.
-    """
-    return np.array(array).data
 
 
 def zeros(n, m, numpy_type=np.float64):
@@ -217,18 +137,10 @@ def range_of_elements_given_number(start, end, number, numpy_type=None):
 
 
 if __name__ == '__main__':
-    complex_py_array = [-1, -2, -3, -4, -5]
-    py_array = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-    py_arrays = [[1, 2, 3], [4, 5, 6], [7, 8, 9], [10, 11, 12]]
+    print('Numpy Array - Creation\n')
     print('mono-dimensional array:\n' + str(init_np_array(py_array)))
     print('\nmono-dimensional array (complex):\n{}'.format(str(init_np_array(complex_py_array, complex))))
     print('\nn-dimensional array:\n' + str(init_np_array(py_arrays)))
-    print('number of axes: ' + str(number_of_axes(py_arrays)))
-    print('shape: ' + str(shape(py_arrays)))
-    print('n° of elements: ' + str(size(py_arrays)))
-    print('dtype: ' + str(dtype(py_arrays)))
-    print('item size: ' + str(item_size(py_arrays)))
-    print('data: ' + str(data(py_arrays)))
     print('-------')
     print('zeros:\n' + str(zeros(2, 5, np.int16)))
     print('zeros:\n' + str(zeros(3, 4)))
