@@ -1,7 +1,7 @@
 # Arithmetic operators on arrays apply elementwise.
 # A new array is created and filled with the result.
 import numpy as np
-from array_creation import range_of_elements_given_number, ones
+from array_creation import ones
 
 
 def arithmetic_operations(array1, array2, operation: ''):
@@ -38,7 +38,7 @@ if __name__ == '__main__':
     b = ones(2, 8)
     # print(a)
     # print(b)
-    print('arithmetic sum:\n' + str(arithmetic_operations(a, b, '+')))
-    print('arithmetic diff:\n' + str(arithmetic_operations(a, b, '-')))
+    print('arithmetic +\n' + str(arithmetic_operations(a, b, '+')))
+    print('arithmetic -\n' + str(arithmetic_operations(a, b, '-')))
     print('arithmetic *\n' + str(arithmetic_operations(a, b, '*')))
     print('arithmetic /\n' + str(arithmetic_operations(a, b, '/')))
