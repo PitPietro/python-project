@@ -1,5 +1,7 @@
-# NumPy provides mathematical functions (such as sin, cos, and exp), which are called "universal functions"(ufunc).
+# In NumPy, universal functions are instances of the numpy.ufunc class.
+# NumPy provides mathematical functions (such as sin, exp, log, ...), which are called "universal functions"(ufunc).
 # Within NumPy, these functions operate elementwise on an array, producing an array as output.
+# All trigonometric functions use radians when an angle is called for.
 import math
 
 import numpy as np
@@ -41,16 +43,27 @@ def np_cos(array):
     return np.cos(array)
 
 
+def np_tan(array):
+    return np.tan(array)
+
+
 if __name__ == '__main__':
     numpy_test_array = np.arange(10)
     trigonometry_array = _fill_trigonometry_array()
+
+    # trigonometry arrays
     sin_array = np_sin(trigonometry_array)
     cos_array = np_cos(trigonometry_array)
+    tan_array = np_tan(trigonometry_array)
 
+    # print out to the user
     print('Numpy Array - Universal Functions - Trigonometric\n')
     print('-------\nTrigonometry:\n')
     print('sin:\n' + str(sin_array))
     print('cos:\n' + str(cos_array))
+    print('tan:\n' + str(tan_array))
+
+    # plotting
 
 # https://numpy.org/doc/stable/reference/ufuncs.html
 # https://numpy.org/doc/stable/reference/ufuncs.html#trigonometric-functions

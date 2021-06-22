@@ -6,7 +6,7 @@ from basic_function import BasicFunction
 
 class FunctionPlotter:
 
-    def __init__(self, f: BasicFunction, start, end, number, numpy_type=None):
+    def __init__(self, f, start, end, number, numpy_type=None):
         self.f = f
         self.start = start
         self.end = end
@@ -14,16 +14,9 @@ class FunctionPlotter:
         self.f_x = np.linspace(start, end, number, dtype=numpy_type)
         self.f_y = []
         self.zeros = np.zeros((2, number), dtype=numpy_type)
-        print('zeros: ' + str(self.zeros))
 
     def fill_y_axis(self):
-        print("x values:\n" + str(self.f_x))
-        print("y value:\n" + str(self.f_y))
-
-        for i in self.f_x:
-            print(i)
-            self.f_y.append(self.f.value_in_x(i))
-        print("y value:\n" + str(self.f_y))
+        print('implement this method')
 
     def plotting(self, x_left=-10., y_bottom=-10, x_right=10, y_top=10):
         # create a new figure or activate an existing one
@@ -44,10 +37,3 @@ class FunctionPlotter:
 
         # display all open figures
         plt.show()
-
-
-if __name__ == '__main__':
-    function = BasicFunction(1, 3, 5)
-    plottingFunction = FunctionPlotter(function, -50, 50, 500)
-    plottingFunction.fill_y_axis()
-    plottingFunction.plotting(y_bottom=-1, y_top=40)
