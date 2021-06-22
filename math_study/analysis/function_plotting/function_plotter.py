@@ -1,8 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-from basic_function import BasicFunction
-
 
 class FunctionPlotter:
 
@@ -18,7 +16,9 @@ class FunctionPlotter:
     def fill_y_axis(self):
         print('implement this method')
 
-    def plotting(self, x_left=-10., y_bottom=-10, x_right=10, y_top=10):
+    def plotting(self, x_left=-10, x_right=10, y_bottom=-10, y_top=10):
+        print("I'm plotting")
+
         # create a new figure or activate an existing one
         plt.figure(1)
         plt.plot(self.f_x, self.f_y)

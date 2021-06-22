@@ -1,9 +1,8 @@
 # It takes as parameter the function to plot
 # The given function can be a subclass of NumPy's ufunc
-import matplotlib.pyplot as plt
 import numpy as np
 
-from function_plotter import FunctionPlotter
+from math_study.analysis.function_plotting.function_plotter import FunctionPlotter
 
 
 class UFuncFunctionPlotter(FunctionPlotter):
@@ -16,14 +15,12 @@ class UFuncFunctionPlotter(FunctionPlotter):
         self.number = number  # number of elements from start to end
         self.f_x = np.linspace(start, end, number, dtype=numpy_type)
         self.f_y = []
-        self.zeros = np.zeros((2, number), dtype=numpy_type)
-        print('zeros: ' + str(self.zeros))
 
     def fill_y_axis(self):
-        print("x values:\n" + str(self.f_x))
-        print("y value:\n" + str(self.f_y))
+        for i in range(self.f_x.size):
+            self.f_y.append(self.f(self.f_x[i]))
 
-        for i in self.f_x:
-            print(i)
-            self.f_y.append(self.f(i))
-        print("y value:\n" + str(self.f_y))
+        print('y: ' + str(self.f_y))
+
+        # for i in self.f_x:
+        #     self.f_y.append(self.f(i))

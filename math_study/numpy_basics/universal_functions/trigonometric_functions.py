@@ -3,8 +3,11 @@
 # Within NumPy, these functions operate elementwise on an array, producing an array as output.
 # All trigonometric functions use radians when an angle is called for.
 import math
+
 import matplotlib.pyplot as plt
 import numpy as np
+
+from math_study.analysis.function_plotting.ufunc_function_plotter import UFuncFunctionPlotter
 
 
 def _fill_trigonometry_array():
@@ -64,23 +67,28 @@ if __name__ == '__main__':
     print('tan:\n' + str(tan_array))
 
     # plotting
-    f_x = np.linspace(-2, 2, 100)
-    f_y = np.zeros((1, 100))
+    plotter = UFuncFunctionPlotter(np.cos, -math.pi, math.pi, 100)
+    plotter.fill_y_axis()
+    plotter.plotting(-math.pi, math.pi, -1.5, 1.5)
 
-    for i in range(f_x.size):
-        f_y[0][i] = np.sin(f_x[i])
+    # f_x = np.linspace(-math.pi, math.pi, 100)
+    # f_y = np.zeros((1, 100))
+    #
+    # for i in range(f_x.size):
+    #     f_y[0][i] = np.cos(f_x[i])
+    #
+    # plt.figure(1)
+    # plt.plot(f_x, f_y[0])
+    # plt.xlim(-math.pi, math.pi)
+    # plt.ylim(-1.5, 1.5)
+    #
+    # # Add a horizontal line across the axis.
+    # plt.axhline(y=0, color='k')
+    #
+    # # Add a vertical line across the axes.
+    # plt.axvline(x=0, color='k')
+    # plt.show()
 
-    plt.figure(1)
-    plt.plot(f_x, f_y[0])
-    plt.xlim(-2, 2)
-    plt.ylim(-2, 2)
-
-    # Add a horizontal line across the axis.
-    plt.axhline(y=0, color='k')
-
-    # Add a vertical line across the axes.
-    plt.axvline(x=0, color='k')
-    plt.show()
-
+# https://realpython.com/python-import/ (import issue)
 # https://numpy.org/doc/stable/reference/ufuncs.html
 # https://numpy.org/doc/stable/reference/ufuncs.html#trigonometric-functions
