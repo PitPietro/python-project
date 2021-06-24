@@ -30,6 +30,7 @@ def _fill_trigonometry_array():
         (5 * math.pi) / 3,  # 300°
         (7 * math.pi) / 4,  # 315°
         (11 * math.pi) / 6,  # 330°
+        (2 * math.pi),  # 360°
     ]
     return trig_array
 
@@ -77,29 +78,95 @@ def np_arctan(array):
     return np.arctan(array)
 
 
+def np_sinh(array):
+    return np.sinh(array)
+
+
+def np_cosh(array):
+    return np.cosh(array)
+
+
+def np_tanh(array):
+    return np.tanh(array)
+
+
+def np_arcsinh(array):
+    return np.arcsinh(array)
+
+
+def np_arccosh(array):
+    return np.arccosh(array)
+
+
+def np_arctanh(array):
+    return np.arctanh(array)
+
+
+def angles_from_radians_to_degrees(value):
+    return np.degrees(value)
+
+
+def angles_from_degrees_to_radians(value):
+    return np.radians(value)
+
+
 if __name__ == '__main__':
     trigonometry_array = _fill_trigonometry_array()
     arc_trigonometry_array = _fill_arc_trigonometry_array()
 
     # trigonometry arrays
+
+    # base
     sin_array = np_sin(trigonometry_array)
     cos_array = np_cos(trigonometry_array)
     tan_array = np_tan(trigonometry_array)
 
+    # inverse
     arcsin_array = np_arcsin(arc_trigonometry_array)
     arccos_array = np_arccos(arc_trigonometry_array)
     arctan_array = np_arctan(trigonometry_array)
 
+    # hyperbolic
+    sinh_array = np_sinh(trigonometry_array)
+    cosh_array = np_cosh(trigonometry_array)
+    tanh_array = np_tanh(trigonometry_array)
+
+    # inverse hyperbolic
+    arcsinh_array = np_arcsinh(trigonometry_array)
+    arccosh_array = np_arccosh(trigonometry_array)
+    arctanh_array = np_arctanh(arc_trigonometry_array)
+
     # print out to the user
     print('Numpy Array - Universal Functions - Trigonometric\n')
-    print('-------\nTrigonometry:\n')
+    print('--- base ---')
     print('sin:\n' + str(sin_array))
     print('cos:\n' + str(cos_array))
     print('tan:\n' + str(tan_array))
-    print('---')
+    print('--- inverse ---')
     print('arcsin:\n' + str(arcsin_array))
     print('arccos:\n' + str(arccos_array))
     print('arctan:\n' + str(arctan_array))
+    print('--- hyperbolic ---')
+    print('sinh:\n' + str(sinh_array))
+    print('cosh:\n' + str(cosh_array))
+    print('tanh:\n' + str(tanh_array))
+    print('--- inverse hyperbolic ---')
+    print('arcsinh:\n' + str(arcsinh_array))
+    print('arccosh:\n' + str(arccosh_array))
+    print('arctanh:\n' + str(arctanh_array))
+    print('--- Convert angles from radians to degrees ---')
+    angles_trigonometry_array = []
+
+    for i in trigonometry_array:
+        angles_trigonometry_array.append(angles_from_radians_to_degrees(i))
+    print(angles_trigonometry_array)
+
+    print('--- Convert angles from degrees to radians ---')
+    radiant_trigonometry_array = []
+
+    for i in angles_trigonometry_array:
+        radiant_trigonometry_array.append(angles_from_degrees_to_radians(i))
+    print(radiant_trigonometry_array)
 
     # # plotting cos
     # numpy_test_array = np.arange(10)
