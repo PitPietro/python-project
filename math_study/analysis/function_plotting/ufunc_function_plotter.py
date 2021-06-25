@@ -4,23 +4,27 @@ import numpy as np
 
 from math_study.analysis.function_plotting.function_plotter import FunctionPlotter
 
+# TODO Add arguments in an easy way, maybe **args parameters
+
 
 class UFuncFunctionPlotter(FunctionPlotter):
 
     def __init__(self, f: np.ufunc, start, end, number, numpy_type=None):
         super().__init__(f, start, end, number, numpy_type)
+        # ufunc function
         self.f = f
+
         self.start = start
         self.end = end
-        self.number = number  # number of elements from start to end
+        # number of elements from start to end
+        self.number = number
+        # x axis values
         self.f_x = np.linspace(start, end, number, dtype=numpy_type)
-        self.f_y = []
+        # fill y axis
+        self.f_y = f(self.f_x)
 
-    def fill_y_axis(self):
-        for i in range(self.f_x.size):
-            self.f_y.append(self.f(self.f_x[i]))
-
-        print('y: ' + str(self.f_y))
-
-        # for i in self.f_x:
-        #     self.f_y.append(self.f(i))
+    # def fill_y_axis(self):
+    #     for i in range(self.f_x.size):
+    #         self.f_y.append(self.f(self.f_x[i]))
+    #
+    #     print('y: ' + str(self.f_y))
