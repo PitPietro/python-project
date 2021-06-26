@@ -6,7 +6,15 @@ from matplotlib.ticker import MaxNLocator
 
 
 def multiple_plotting():
-    x = np.linspace(-math.pi, math.pi, 100)
+    x_limit = math.pi
+    y_limit = 1.5
+    rows = 2
+    cols = 3
+
+    x = np.linspace(-x_limit, x_limit, 100)
+
+    # functions
+    ys = [np.sin(x), np.cos(x), np.tan(x), np.arcsin(x), np.arccos(x), np.arctan(x)]
     y11 = np.sin(x)
     y12 = np.cos(x)
     y13 = np.tan(x)
@@ -14,24 +22,30 @@ def multiple_plotting():
     y22 = np.arccos(x)
     y23 = np.arctan(x)
 
-    fig, axs = plt.subplots(nrows=2, ncols=3, figsize=(10, 5))
+    fig, axs = plt.subplots(nrows=rows, ncols=cols, figsize=(10, 5))
 
     fig.suptitle('Trigonometric functions')
-    axs[0, 0].set_title('sin(x)')
-    axs[0, 0].set_xlim(-math.pi, math.pi)
-    axs[0, 0].set_ylim(-1.5, 1.5)
+    # axs[0, 0].set_title('sin(x)')
+    axs[0, 0].set_xlim(-x_limit, x_limit)
+    axs[0, 0].set_ylim(-y_limit, y_limit)
 
-    axs[0, 0].plot(x, y11)
-    axs[0, 1].plot(x, y12)
-    axs[0, 2].plot(x, y13)
-    axs[1, 0].plot(x, y21)
-    axs[1, 1].plot(x, y22)
-    axs[1, 2].plot(x, y23)
+    counter = 0
+    for i in range(rows):
+        for j in range(cols):
+            # print("({}; {})".format(i, j))
+            axs[i, j].set_xlim(-x_limit, x_limit)
+            axs[i, j].set_ylim(-y_limit, y_limit)
+            axs[i, j].plot(x, ys[counter])
+            axs[i, j].plot(x, ys[counter])
+            # add a horizontal line across the axis
+            axs[i, j].axhline(y=0, color='k')
+
+            # add a vertical line across the axes
+            axs[i, j].axvline(x=0, color='k')
+            counter = counter + 1
 
     # display all open figures
     plt.show()
-
-    print('axes object: ' + str(axs[0, 0]))
 
 
 if __name__ == '__main__':
