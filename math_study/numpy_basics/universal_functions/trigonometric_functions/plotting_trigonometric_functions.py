@@ -15,33 +15,23 @@ def multiple_plotting():
 
     # functions
     ys = [np.sin(x), np.cos(x), np.tan(x), np.arcsin(x), np.arccos(x), np.arctan(x)]
-    y11 = np.sin(x)
-    y12 = np.cos(x)
-    y13 = np.tan(x)
-    y21 = np.arcsin(x)
-    y22 = np.arccos(x)
-    y23 = np.arctan(x)
-
     fig, axs = plt.subplots(nrows=rows, ncols=cols, figsize=(10, 5))
 
     fig.suptitle('Trigonometric functions')
-    # axs[0, 0].set_title('sin(x)')
-    axs[0, 0].set_xlim(-x_limit, x_limit)
-    axs[0, 0].set_ylim(-y_limit, y_limit)
 
     counter = 0
     for i in range(rows):
         for j in range(cols):
-            # print("({}; {})".format(i, j))
+            # get/set the x limits of the current axes
             axs[i, j].set_xlim(-x_limit, x_limit)
+            # get/set the y limits of the current axes
             axs[i, j].set_ylim(-y_limit, y_limit)
-            axs[i, j].plot(x, ys[counter])
             axs[i, j].plot(x, ys[counter])
             # add a horizontal line across the axis
             axs[i, j].axhline(y=0, color='k')
-
             # add a vertical line across the axes
             axs[i, j].axvline(x=0, color='k')
+
             counter = counter + 1
 
     # display all open figures
