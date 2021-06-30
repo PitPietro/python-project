@@ -89,15 +89,43 @@ def empty(n, m, numpy_type=np.float64):
     """
     Parameters
     ----------
-    n number of dimensions
-    m number of elements for each dimension
-    numpy_type dtype
+    n : int
+      Number of dimensions
+    m: int
+      Number of elements for each dimension
+    numpy_type : data-type, optional
+      Data-type of the returned array.
 
     Returns
     -------
-    Array full of random values which depends on the state of the memory
+    Array full of random values which depends on the state of the memory.
     """
     return np.empty((n, m), dtype=numpy_type)
+
+
+def eye(n, m=None, k=0, numpy_type=np.float, numpy_order='C'):
+    """
+    Parameters
+    ----------
+    n : int
+      Number of rows in the output.
+    m : int, optional
+      Number of columns in the output. If None, defaults to `n`.
+    k : int, optional
+      Index of the diagonal: 0 (the default) refers to the main diagonal,
+      a positive value refers to an upper diagonal, and a negative value
+      to a lower diagonal.
+    numpy_type : data-type, optional
+      Data-type of the returned array.
+    numpy_order : {'C', 'F'}, optional
+        Whether the output should be stored in row-major (C-style) or
+        column-major (Fortran-style) order in memory.
+
+    Returns
+    -------
+    2-D array with ones on the diagonal and zeros elsewhere.
+    """
+    return np.eye(n, m, k, dtype=numpy_type, order=numpy_order)
 
 
 def range_of_elements_given_step(start, end, step, numpy_type=None):
@@ -150,6 +178,9 @@ if __name__ == '__main__':
     print('-------')
     print('empty:\n' + str(empty(1, 4, np.int16)))
     print('empty:\n' + str(empty(4, 3)))
+    print('-------')
+    print('eye:\n' + str(eye(5)))
+    print('eye:\n' + str(eye(3, 7)))
     print('-------')
     print('arange:\n' + str(range_of_elements_given_step(1, 4, 0.5)))
     print('linspace:\n' + str(range_of_elements_given_number(1, 8, 5)))

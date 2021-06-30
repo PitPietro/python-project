@@ -59,3 +59,5 @@ if __name__ == '__main__':
     print('---')
     print('very large mono-dimensional array:\n' + str(print_one_dim_array(5000)))
     print('very large n-dimensional array:\n' + str(reshape_n_dim_array(10000, 100, 100)))
+    print("---\nTest 'help' builtin function:")
+    help(print_one_dim_array)
