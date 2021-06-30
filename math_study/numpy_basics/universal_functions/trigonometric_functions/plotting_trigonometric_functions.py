@@ -1,38 +1,52 @@
 import math
-import numpy as np
-from math_study.analysis.function_plotting.ufunc_function_plotter import UFuncFunctionPlotter
-import matplotlib.pyplot as plt
-from matplotlib.ticker import MaxNLocator
 
+import matplotlib.pyplot as plt
+import numpy as np
 
 limit = {
     "x_sx": -math.pi,
     "x_dx": math.pi,
-    "y_down": -1.5,
-    "y_up": 1.5,
+    "y_down": -2.0,
+    "y_up": 2.0,
 }
 
 arccos_limit = {
     "x_sx": -math.pi,
     "x_dx": math.pi,
-    "y_down": 0.5,
-    "y_up": 2.5,
+    "y_down": -1,
+    "y_up": 3,
+}
+
+arccosh_limit = {
+    "x_sx": 1,
+    "x_dx": (math.pi * 2) - 1,
+    "y_down": -1,
+    "y_up": 3,
 }
 
 
 def multiple_plotting():
-    x_limit = math.pi
-    y_limit = 1.5
-    rows = 2
+    x_limit = math.pi * 2
+    rows = 4
     cols = 3
 
-    limits = [limit, limit, limit, limit, arccos_limit, limit]
+    limits = [
+        limit, limit, limit,
+        limit, arccos_limit, limit,
+        limit, arccos_limit, limit,
+        limit, arccosh_limit, limit
+    ]
 
     x = np.linspace(-x_limit, x_limit, 100)
 
     # functions
-    ys = [np.sin(x), np.cos(x), np.tan(x), np.arcsin(x), np.arccos(x), np.arctan(x)]
-    fig, axs = plt.subplots(nrows=rows, ncols=cols, figsize=(10, 5))
+    ys = [
+        np.sin(x), np.cos(x), np.tan(x),
+        np.arcsin(x), np.arccos(x), np.arctan(x),
+        np.sinh(x), np.cosh(x), np.tanh(x),
+        np.arcsinh(x), np.arccosh(x), np.arctanh(x)
+    ]
+    fig, axs = plt.subplots(nrows=rows, ncols=cols, figsize=(16, 9))
 
     fig.suptitle('Trigonometric functions')
 
