@@ -5,11 +5,28 @@ import matplotlib.pyplot as plt
 from matplotlib.ticker import MaxNLocator
 
 
+limit = {
+    "x_sx": -math.pi,
+    "x_dx": math.pi,
+    "y_down": -1.5,
+    "y_up": 1.5,
+}
+
+arccos_limit = {
+    "x_sx": -math.pi,
+    "x_dx": math.pi,
+    "y_down": 0.5,
+    "y_up": 2.5,
+}
+
+
 def multiple_plotting():
     x_limit = math.pi
     y_limit = 1.5
     rows = 2
     cols = 3
+
+    limits = [limit, limit, limit, limit, arccos_limit, limit]
 
     x = np.linspace(-x_limit, x_limit, 100)
 
@@ -23,9 +40,9 @@ def multiple_plotting():
     for i in range(rows):
         for j in range(cols):
             # get/set the x limits of the current axes
-            axs[i, j].set_xlim(-x_limit, x_limit)
+            axs[i, j].set_xlim(limits[counter].get('x_sx'), limits[counter].get('x_dx'))
             # get/set the y limits of the current axes
-            axs[i, j].set_ylim(-y_limit, y_limit)
+            axs[i, j].set_ylim(limits[counter].get('y_down'), limits[counter].get('y_up'))
             axs[i, j].plot(x, ys[counter])
             # add a horizontal line across the axis
             axs[i, j].axhline(y=0, color='k')
