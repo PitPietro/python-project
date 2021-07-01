@@ -43,8 +43,8 @@ table_of_data_types = [
 ]
 
 if __name__ == '__main__':
-    for data_type in table_of_data_types:
-        print(data_type)
+    for _type in table_of_data_types:
+        print(_type)
 
 # first = {'x': 1, 'y': 100, 'foo': 'bar'}
 # second = dict(first, x=2, y=200)  # {'y': 200, 'x': 2, 'foo': 'bar'}
