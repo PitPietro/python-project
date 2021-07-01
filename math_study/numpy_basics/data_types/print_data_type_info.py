@@ -7,7 +7,13 @@ def print_info(_array: np.array):
           .format(_array, _array.dtype, _array.itemsize, _array.nbytes))
 
 
+def create_array_from_type(_type: data_type, n_elements: int):
+    # print(_type.get('type'))
+    return np.array(list(range(n_elements)), _type.get('type'))
+
+
 if __name__ == '__main__':
     print('NumPy Data Types - Print data type info:\n')
-    print_info(np.array(list(range(10)), dtype=np.int16))
-    print_info(np.array(list(range(10)), dtype=np.float32))
+    for _data_type in table_of_data_types:
+        _array = create_array_from_type(_data_type, 10)
+        print_info(_array)
