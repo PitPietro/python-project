@@ -17,3 +17,4 @@ if __name__ == '__main__':
     for _data_type in table_of_data_types:
         _array = create_array_from_type(_data_type, 10)
         print_info(_array)
+
