@@ -11,3 +11,8 @@ if __name__ == '__main__':
     print(np.random.randn())
     print(randn(10))  # by using 'from numpy.random import *' this call is equal to the one above
     print(np.random.randn(2, 5))
+    print(rand(16).reshape(2, 8))
+    print('-----\nrandint function:')
+    print(randint(0, 20, 5, dtype=np.int64))
+    print(randint(0, 20, size=(2, 8), dtype=np.int64))
+

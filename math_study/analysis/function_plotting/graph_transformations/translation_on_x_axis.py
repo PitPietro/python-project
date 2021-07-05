@@ -14,7 +14,7 @@ if __name__ == '__main__':
     f_x = BasicFunction(2, 1, 0)
 
     # domain and co-domain settings
-    x = np.linspace(-x_limit, x_limit, 100)
+    x = np.linspace(-x_limit, x_limit, 1000)
 
     plt.figure(1)
 
