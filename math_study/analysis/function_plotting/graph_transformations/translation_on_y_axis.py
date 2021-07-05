@@ -7,6 +7,8 @@ import numpy as np
 if __name__ == '__main__':
     # init config
     x_limit = math.pi * 2
+    c = 2
+
     rc('font', **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
     # for 'Palatino' and other serif fonts use:
     # rc('font',**{'family':'serif','serif':['Palatino']})
@@ -15,8 +17,6 @@ if __name__ == '__main__':
     # domain and co-domain settings
     x = np.linspace(-x_limit, x_limit, 100)
     f_x = np.sin(x)
-
-    c = 2
 
     # upper function
     g_x = f_x + c
