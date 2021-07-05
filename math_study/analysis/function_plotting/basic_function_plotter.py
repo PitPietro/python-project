@@ -1,8 +1,7 @@
-import matplotlib.pyplot as plt
 import numpy as np
 
-from basic_function import BasicFunction
-from function_plotter import FunctionPlotter
+from math_study.analysis.function_plotting.basic_function import BasicFunction
+from math_study.analysis.function_plotting.function_plotter import FunctionPlotter
 
 
 class BasicFunctionPlotter(FunctionPlotter):

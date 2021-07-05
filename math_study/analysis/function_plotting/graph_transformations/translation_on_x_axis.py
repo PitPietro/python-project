@@ -3,26 +3,24 @@ import math
 import matplotlib.pyplot as plt
 import numpy as np
 
+from math_study.analysis.function_plotting.basic_function import BasicFunction
+from math_study.analysis.function_plotting.basic_function_plotter import BasicFunctionPlotter
+
 if __name__ == '__main__':
     # init config
     x_limit = math.pi * 2
     c = 2
 
+    f_x = BasicFunction(2, 1, 0)
+
     # domain and co-domain settings
     x = np.linspace(-x_limit, x_limit, 100)
-    f_x = x ** 2 + x
-
-    # right function
-    g_x = (x - c) ** 2 + (x - c)
-
-    # left function
-    h_x = (x + c) ** 2 + (x + c)
 
     plt.figure(1)
 
-    plt.plot(x, h_x, 'g--')
-    plt.plot(x, f_x)
-    plt.plot(x, g_x, 'y--')
+    plt.plot(x, f_x.value_in_x(x + c), 'g--')
+    plt.plot(x, f_x.value_in_x(x))
+    plt.plot(x, f_x.value_in_x(x - c), 'y--')
 
     # get/set the x limits of the current axes
     plt.xlim(-math.pi, math.pi)
