@@ -42,11 +42,9 @@ if __name__ == '__main__':
     print('\nslicing from 0 to the given end value')
     print(bi_dim_array[:2])
 
-    print('\nslicing from 0 to the given end value, then take only the elements placed in the given position (2nd argument in the square brackets)')
+    print('\nslicing from 0 to the given end value, then take only the elements placed in the given position '
+          '(2nd argument in the square brackets)')
     print(bi_dim_array[:2, 1])
-
-    print('\n')
-    print(bi_dim_array[:, 2])
 
     print('\nget the array filled by the elements placed in the given position (2nd argument in the square brackets)')
     print(bi_dim_array[:, 2])
