@@ -37,3 +37,9 @@ if __name__ == '__main__':
     except ValueError as error:
         print(error)
 
+    print('\nslice the array given a couple of list')
+    data = np.arange(32).reshape((8, 4))
+    list1, list2 = [2, 4], [3, 1]
+    # the first list gives the index of the sub-arrays
+    # the second list gives the index of the elements
+    print(data[list1, list2])
