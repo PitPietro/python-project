@@ -1,5 +1,6 @@
 import numpy as np
-from data_types_list import data_type, table_of_data_types
+
+from math_study.numpy_basics.data_types.data_types_list import data_type, table_of_data_types
 
 
 def print_info(_array: np.array):
