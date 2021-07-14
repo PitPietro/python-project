@@ -2,7 +2,9 @@
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
 
-math_study/numpy_basics/save_and_load/compare
+math_study/numpy_basics/save_and_load/compare/*.txt
+math_study/numpy_basics/save_and_load/compare/*.npy
+math_study/numpy_basics/save_and_load/compare/*.csv
 
 # all the .idea folder
 .idea
