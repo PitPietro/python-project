@@ -37,9 +37,20 @@ if __name__ == '__main__':
     except ValueError as error:
         print(error)
 
-    print('\nslice the array given a couple of list')
+    print('\nfilled multidimensional array')
     data = np.arange(32).reshape((8, 4))
+    print(data)
+
+    print('\nslice the array given a list')
+    list1 = [1, 3, 5]
+    print(data[list1])
+
+    print('\nslice the array given a couple of list')
     list1, list2 = [2, 4], [3, 1]
     # the first list gives the index of the sub-arrays
     # the second list gives the index of the elements
     print(data[list1, list2])
+
+    print('\nget all the rows and only the columns at the given index (the last numbers)')
+    print(data[[1, 3, 5]][:, [1, 3, 2]])
+
