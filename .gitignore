@@ -6,6 +6,10 @@ math_study/numpy_basics/read_write_on_files/compare/*.txt
 math_study/numpy_basics/read_write_on_files/compare/*.npy
 math_study/numpy_basics/read_write_on_files/compare/*.csv
 
+math_study/numpy_basics/read_write_on_files/*.npy
+math_study/numpy_basics/read_write_on_files/*.npz
+
+
 # all the .idea folder
 .idea
 

@@ -98,12 +98,12 @@ if __name__ == '__main__':
     data = np.random.rand(ELEMENTS)
     print(data)
 
-    # write_time_npy = write_to_npy(data)
-    # write_time_csv = write_to_csv(data)
-    # write_time_txt = write_to_txt(data)
-    #
-    # read_time_npy = read_from_npy()
-    # read_time_csv = read_from_csv()
+    write_time_npy = write_to_npy(data)
+    write_time_csv = write_to_csv(data)
+    write_time_txt = write_to_txt(data)
+
+    read_time_npy = read_from_npy()
+    read_time_csv = read_from_csv()
     read_time_txt = read_from_txt()
 
 # https://datascienceparichay.com/article/read-csv-file-as-numpy-array/

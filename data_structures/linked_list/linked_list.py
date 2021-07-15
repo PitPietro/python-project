@@ -27,7 +27,7 @@ class LinkedList:
         """
         node = self.head
         while node is not None:
-            print(node.data, " ")
+            print(node.array, " ")
             node = node.next
         print("\n")
 
@@ -39,7 +39,7 @@ class LinkedList:
         result = []
         node = self.head
         while node is not None:
-            result.append(node.data)
+            result.append(node.array)
             node = node.next
         return result
 
@@ -51,7 +51,7 @@ class LinkedList:
         """
         current = self.head
         while current is not None:
-            if current.data == target:
+            if current.array == target:
                 print("'{}' found!".format(target))
                 return True
             else:
