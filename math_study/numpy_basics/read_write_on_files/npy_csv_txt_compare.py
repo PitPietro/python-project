@@ -1,5 +1,6 @@
-import numpy as np
 import time
+
+import numpy as np
 
 from math_study.numpy_basics.data_types.print_data_type_info import print_info
 
@@ -12,10 +13,10 @@ def write_to_npy(data_array: np.array) -> float:
     end = time.time()
 
     read_time = round(end - start, 5)
-    print("\n____________ write to .npy ________________________________________________")
+    print("\n____________ write to .npy _________________________________________________")
     print_info(data_array)
     print(f"Time to write: {read_time} seconds.")
-    print("___________________________________________________________________________")
+    print("____________________________________________________________________________")
     return read_time
 
 
@@ -25,10 +26,10 @@ def write_to_csv(data_array: np.array) -> float:
     end = time.time()
 
     read_time = round(end - start, 5)
-    print("\n____________ write to .csv ________________________________________________")
+    print("\n____________ write to .csv _________________________________________________")
     print_info(data_array)
     print(f"Time to write: {read_time} seconds.")
-    print("___________________________________________________________________________")
+    print("____________________________________________________________________________")
     return read_time
 
 
@@ -42,10 +43,51 @@ def write_to_txt(data_array: np.array) -> float:
     end = time.time()
 
     read_time = round(end - start, 5)
-    print("\n____________ write to .txt ________________________________________________")
+    print("\n____________ write to .txt _________________________________________________")
     print_info(data_array)
     print(f"Time to write: {read_time} seconds.")
-    print("___________________________________________________________________________")
+    print("____________________________________________________________________________")
+    return read_time
+
+
+def read_from_npy() -> float:
+    start = time.time()
+    data_array = np.load('compare/data.npy')
+    end = time.time()
+
+    read_time = round(end - start, 5)
+    print("\n____________ read from .npy ________________________________________________")
+    print_info(data_array)
+    print(f"Time to read: {read_time} seconds.")
+    print("____________________________________________________________________________")
+    return read_time
+
+
+def read_from_csv() -> float:
+    start = time.time()
+    data_array = np.loadtxt('compare/data.csv', delimiter=',')
+    end = time.time()
+
+    read_time = round(end - start, 5)
+    print("\n____________ read from .csv ________________________________________________")
+    print_info(data_array)
+    print(f"Time to read: {read_time} seconds.")
+    print("____________________________________________________________________________")
+    return read_time
+
+
+def read_from_txt() -> float:
+    start = time.time()
+    with open('compare/data.txt') as txt_file:
+        data_array_list = txt_file.readlines()
+    data_array = np.array(data_array_list)
+    end = time.time()
+
+    read_time = round(end - start, 5)
+    print("\n____________ read from .txt ________________________________________________")
+    print_info(data_array)
+    print(f"Time to read: {read_time} seconds.")
+    print("____________________________________________________________________________")
     return read_time
 
 
@@ -56,8 +98,12 @@ if __name__ == '__main__':
     data = np.random.rand(ELEMENTS)
     print(data)
 
-    write_time_npy = write_to_npy(data)
-    write_time_csv = write_to_csv(data)
-    write_time_txt = write_to_txt(data)
+    # write_time_npy = write_to_npy(data)
+    # write_time_csv = write_to_csv(data)
+    # write_time_txt = write_to_txt(data)
+    #
+    # read_time_npy = read_from_npy()
+    # read_time_csv = read_from_csv()
+    read_time_txt = read_from_txt()
 
-# https://towardsdatascience.com/what-is-npy-files-and-why-you-should-use-them-603373c78883
+# https://datascienceparichay.com/article/read-csv-file-as-numpy-array/
