@@ -9,10 +9,10 @@ if __name__ == '__main__':
     x_limit = math.pi * 2
     c = 2
 
-    rc('font', **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
+    # rc('font', **{'family': 'sans-serif', 'sans-serif': ['Helvetica']})
     # for 'Palatino' and other serif fonts use:
     # rc('font',**{'family':'serif','serif':['Palatino']})
-    rc('text', usetex=True)
+    # rc('text', usetex=True)
 
     # domain and co-domain settings
     x = np.linspace(-x_limit, x_limit, 100)
@@ -44,7 +44,7 @@ if __name__ == '__main__':
 
     # *math_fontfamily* can be used in most places where there is text,
     # like in the title:
-    plt.title(r"$f(x)\pm c$", size=14)  # , **code_font
+    # plt.title(r"$f(x)\pm c$", size=14)  # , **code_font
 
     # display all open figures
     plt.show()
