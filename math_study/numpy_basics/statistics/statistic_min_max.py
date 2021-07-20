@@ -8,7 +8,7 @@ if __name__ == '__main__':
     print('\nrandom multidimensional array:')
     print(random_data)
 
-    print('get the min value from the array:')
+    print('\nget the min value from the array:')
     print(random_data.min())
 
     print('\nget the min value from the array along the specified axis:')
@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     print(str('- ' * 20))
 
-    print('get the max value from the array:')
+    print('\nget the max value from the array:')
     print(random_data.max())
 
     print('\nget the min value from the array along the specified axis:')
