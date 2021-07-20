@@ -10,8 +10,8 @@ if __name__ == '__main__':
     print(ordered_data.mean())
 
     print('\nCompute the arithmetic mean along the specified axis:')
-    print(ordered_data.mean(axis=0))  # array filled with vertical means
-    print(ordered_data.mean(axis=1))  # array filled with horizontal means
+    print(ordered_data.mean(axis=0))  # array filled with vertical means: means of the values in the same column
+    print(ordered_data.mean(axis=1))  # array filled with horizontal means: means of the values in the same row
 
     # if you exceed the number of dimensions, you'll get a 'numpy.AxisError'
     try:
