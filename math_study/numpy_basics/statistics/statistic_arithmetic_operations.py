@@ -11,7 +11,7 @@ if __name__ == '__main__':
     array1 = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
     array2 = np.array([[4, 5, 6], [7, 8, 9]])
 
-    print('\nmoltiplication between numpy arrays')
+    print('\nmultiplication between numpy arrays')
     print(array1 * 2)
     print(array1 * array1)
     print('\nplease note: arrays must have the same shape')
@@ -28,7 +28,6 @@ if __name__ == '__main__':
         print(array1 + array2)
     except ValueError as e:
         print(e)  # ValueError: operands could not be broadcast together with different shapes
-
 
     print('\nsubtraction between numpy arrays')
     print(array1 - 2)
@@ -49,5 +48,33 @@ if __name__ == '__main__':
     print('\nplease note: arrays must have the same shape')
     try:
         print(array1 ** array2)
+    except ValueError as e:
+        print(e)  # ValueError: operands could not be broadcast together with different shapes
+
+    array3 = np.array([[1, 7, 3], [8, 5, 6], [9, 8, 9]])
+    print('\nelement comparison: equal')
+    print(array1 == 2)
+    print(array1 == array3)
+    print('\nplease note: arrays must have the same shape, otherwise the result will not be an array')
+    try:
+        print(array1 == array2)
+    except ValueError as e:
+        print(e)  # ValueError: operands could not be broadcast together with different shapes
+
+    print('\nelement comparison: major')
+    print(array1 > 2)
+    print(array1 > array3)
+    print('\nplease note: arrays must have the same shape')
+    try:
+        print(array1 > array2)
+    except ValueError as e:
+        print(e)  # ValueError: operands could not be broadcast together with different shapes
+
+    print('\nelement comparison: minor')
+    print(array1 < 2)
+    print(array1 < array3)
+    print('\nplease note: arrays must have the same shape')
+    try:
+        print(array1 < array2)
     except ValueError as e:
         print(e)  # ValueError: operands could not be broadcast together with different shapes
