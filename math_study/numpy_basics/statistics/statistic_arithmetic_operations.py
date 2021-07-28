@@ -19,3 +19,35 @@ if __name__ == '__main__':
         print(array1 * array2)
     except ValueError as e:
         print(e)  # ValueError: operands could not be broadcast together with different shapes
+
+    print('\naddition between numpy arrays')
+    print(array1 + 2)
+    print(array1 + array1)
+    print('\nplease note: arrays must have the same shape')
+    try:
+        print(array1 + array2)
+    except ValueError as e:
+        print(e)  # ValueError: operands could not be broadcast together with different shapes
+
+
+    print('\nsubtraction between numpy arrays')
+    print(array1 - 2)
+    print(array1 - array1)
+    print('\nplease note: arrays must have the same shape')
+    try:
+        print(array1 - array2)
+    except ValueError as e:
+        print(e)  # ValueError: operands could not be broadcast together with different shapes
+
+    print('\nreciprocal of numpy array')
+    reciprocal_array = np.array(1 / array1, dtype=np.float64)
+    print(reciprocal_array)
+
+    print('\npower of numpy array')
+    print(array1 ** 2)
+    print(array1 ** array1)
+    print('\nplease note: arrays must have the same shape')
+    try:
+        print(array1 ** array2)
+    except ValueError as e:
+        print(e)  # ValueError: operands could not be broadcast together with different shapes
