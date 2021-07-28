@@ -21,3 +21,7 @@ if __name__ == '__main__':
     print(random_data)
     print('\nordered multidimensional array')
     print(ordered_data)
+
+# other useful function
+# https://numpy.org/doc/stable/reference/generated/numpy.cumsum.html
+# https://numpy.org/doc/stable/reference/generated/numpy.std.html
