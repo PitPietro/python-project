@@ -26,9 +26,9 @@ if __name__ == '__main__':
 
     plt.figure(1)
 
-    plt.plot(x, g_x, 'y--')
+    plt.plot(x, g_x, 'g--')
     plt.plot(x, f_x)
-    plt.plot(x, h_x, 'g--')
+    plt.plot(x, h_x, 'y--')
 
     # get/set the x limits of the current axes
     plt.xlim(-math.pi, math.pi)
@@ -45,6 +45,11 @@ if __name__ == '__main__':
     # *math_fontfamily* can be used in most places where there is text,
     # like in the title:
     # plt.title(r"$f(x)\pm c$", size=14)  # , **code_font
+
+    # save plot to file
+    # after plt.show() is called, a new blank figure is created.
+    # to avoid paving black images, just save the image before showing it
+    plt.savefig('y_translation.svg')
 
     # display all open figures
     plt.show()
