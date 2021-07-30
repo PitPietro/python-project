@@ -92,6 +92,9 @@ python3 [file-name].py
 # python3 hello-world.py
 ```
 
+## Resources
+- [astrotech.io](https://python.astrotech.io)
+
 ## Versioning
 
 For the versions available, see the [tags on this repository](https://github.com/PitPietro/python-project/tags).
