@@ -11,7 +11,7 @@ if __name__ == '__main__':
     x_limit = math.pi * 2
     c = 2
 
-    f_x = BasicFunction(2, 1, 0)
+    f_x = BasicFunction(2, 1, -2)
 
     # domain and co-domain settings
     x = np.linspace(-x_limit, x_limit, 1000)
@@ -36,5 +36,12 @@ if __name__ == '__main__':
 
     plt.title('Translation on x axis', size=14)
 
+    # save plot to file
+    # after plt.show() is called, a new blank figure is created.
+    # to avoid paving black images, just save the image before showing it
+    plt.savefig('x_translation.svg')
+
     # display all open figures
     plt.show()
+
+# https://pythonspot.com/matplotlib-save-figure-to-image-file/
